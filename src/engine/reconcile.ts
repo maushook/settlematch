@@ -236,7 +236,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
           id: x.order.id, heuristicScore: x.score,
           fields: {
             total: x.order.total, createdAt: x.order.createdAt, customer: x.order.customerName, email: x.order.email,
-            phone: x.order.phone, items: x.order.items,
+            phone: x.order.phone, items: x.order.items, checkout: x.order.checkout,
             paymentReference: x.order.paymentReference ? `${x.order.paymentReference} (not found in gateway)` : '',
           },
         })),

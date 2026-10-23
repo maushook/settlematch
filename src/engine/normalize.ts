@@ -126,6 +126,7 @@ export function parseOrders(text: string, issues: ParseIssue[]): Order[] {
       customerName: g.get(row, 'name'), email: g.get(row, 'email').toLowerCase(), phone: phone10(g.get(row, 'phone')),
       items: item, total: money(g.get(row, 'total')),
       method: methodText.includes('cod') || methodText.includes('cash') ? 'cod' : 'other',
+      checkout: g.get(row, 'method'),
       paymentReference: g.get(row, 'ref'), financialStatus: g.get(row, 'status').toLowerCase(),
       refundedAmount: money(g.get(row, 'refunded')),
     });

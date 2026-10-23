@@ -13,6 +13,7 @@ export interface Order {
   items: string;
   total: number;
   method: PayMethod;
+  checkout: string;    // raw payment method / gateway text from the store export
   paymentReference: string;
   financialStatus: string;
   refundedAmount: number;

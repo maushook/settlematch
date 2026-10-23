@@ -20,7 +20,7 @@ How to read payment notes:
 - They are written by real customers: Hinglish or other Indian languages, typos, nicknames, relations (aunty, sir, didi, bhaiya), spelling variants of Indian names, letters typed for digits (O for 0, l or I for 1), and numbers written out in words. Decode them.
 - Products are often described by what the artwork shows, in Hindi or English, or by a place or landmark it depicts, instead of the catalogue name. Translate and compare with each candidate's items.
 - The payer is often not the customer (gifts, family), so a payer email or phone that differs from the order is normal and is NOT evidence against a match.
-- An order whose payment reference is "not found in gateway" probably has its own missing payment. Pick it only if the notes point to it specifically.
+- Check how each candidate order was paid. A payment made through a payment link or manual transfer usually belongs to an order marked as a manual payment in the store. An order that went through gateway checkout and carries a payment reference "not found in gateway" probably has its own missing payment, so pick it only if the notes point to it specifically.
 - For bank credits, compare the deposit with each settlement's net amount and date.
 
 For each item, first write your reasoning, then choose:
@@ -92,7 +92,7 @@ export function parseResponse(json: any, packets: AiPacket[]): AiDecision[] {
       : null;
     const strength = d.strength in STRENGTH_CONFIDENCE ? (d.strength as keyof typeof STRENGTH_CONFIDENCE) : undefined;
     const confidence = strength ? STRENGTH_CONFIDENCE[strength] : Math.max(0, Math.min(1, Number(d.confidence) || 0));
-    const reason = String(d.reasoning ?? d.reason ?? '').slice(0, 240);
+    const reason = String(d.reasoning ?? d.reason ?? '').slice(0, 400);
     out.push({ kind: pk.kind, id: pk.id, match, confidence, strength, reason });
   }
   return out;
