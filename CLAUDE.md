@@ -9,13 +9,14 @@ Submission for the Razorpay AI Builders hiring challenge. Reconciles Shopify ord
 - `npm run precompute -- drafts` polishes only the sample's drafts, writes `src/sample/ai-drafts.json`
 - `npm run generate` regenerates synthetic sample data + answer key (seeded, deterministic)
 - `npm run dev` local app, `npm run build` type-check + build
-- Deploy: Cloudflare Workers via `npm run deploy` (wrangler)
+- Deploy: Cloudflare Workers via `npm run deploy` (wrangler). Live at https://maushook.com/settlematch/
 
 ## Architecture
 - `src/engine/` pure TypeScript, runs in the browser. Pipeline in `reconcile.ts`: normalize, rules (order to payment), fee check, rules (settlement to bank by UTR), heuristics, AI, exceptions.
 - `src/engine/ai.ts` shared by `worker/index.ts` and `scripts/precompute.ts`. Forced tool call, evidence strength categories mapped to confidence, output validated against the candidate shortlist.
 - `src/engine/drafts.ts` builds drafts from exception facts only; `checkFacts` guards any AI rewrite. `src/engine/draft-ai.ts` is shared by the Worker and precompute.
 - `worker/index.ts` serves `dist/`, `POST /api/resolve` and `POST /api/draft` (rate limited, key server-side).
+- Path prefix: the app lives under `/settlematch/` (Vite `base`). In app code, build every URL from `import.meta.env.BASE_URL`, never a root-absolute path. The Worker strips the prefix and 404s anything outside it on maushook.com; other paths on that zone belong to another site.
 
 ## Invariants (do not break)
 - Zero wrong matches. Abstaining is always better than guessing; tests enforce it.

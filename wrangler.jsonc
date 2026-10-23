@@ -6,8 +6,16 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
+    // Every request goes through the Worker, which strips the /settlematch prefix first.
+    "run_worker_first": true
   },
+  // Only these paths on maushook.com reach the Worker; the rest of the zone is another site.
+  "routes": [
+    { "pattern": "maushook.com/settlematch", "zone_name": "maushook.com" },
+    { "pattern": "maushook.com/settlematch/*", "zone_name": "maushook.com" }
+  ],
+  // Keep the workers.dev address, which also serves paths without the prefix.
+  "workers_dev": true,
   "vars": {
     "AI_MODEL": "claude-haiku-5-5"
   },
