@@ -1,0 +1,301 @@
+Name,Email,Phone,Created at,Financial Status,Total,Payment Method,Payment Reference,Refunded Amount,Lineitems,Billing Name
+#1001,meera.shetty5@outlook.com,+91 92076 62546,2026-09-01 09:26:40 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_2ejWxRAtnn7jac,0.00,Buddha Meditation Canvas x1,Meera Shetty
+#1002,meera.pillai37@yahoo.co.in,+91 92510 00140,2026-09-01 09:56:39 +0530,paid,5598.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Buddha Meditation Canvas x1 | Buddha Meditation Canvas x1,Meera Pillai
+#1003,rajesh.bose54@yahoo.co.in,+91 94880 56800,2026-09-01 10:12:35 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_y5HLo9xxzRzpA2,0.00,Buddha Meditation Canvas x1,Rajesh Bose
+#1004,gaurav.agarwal85@yahoo.co.in,+91 93862 94580,2026-09-01 11:07:02 +0530,pending,3499.00,Cash on Delivery (COD),,0.00,Taj Sunset Panorama x1,Gaurav Agarwal
+#1005,sneha.agarwal61@outlook.com,+91 94532 40632,2026-09-01 14:44:42 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1,Sneha Agarwal
+#1006,rajesh.bose14@outlook.com,+91 97744 44800,2026-09-01 14:50:06 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_KmTpArti5bnPwt,0.00,Buddha Meditation Canvas x1,Rajesh Bose
+#1007,aditya.malhotra55@gmail.com,+91 99922 93424,2026-09-01 14:54:36 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_NmSPkzcvt5hjhV,0.00,Buddha Meditation Canvas x1,Aditya Malhotra
+#1008,anjali.chatterjee55@gmail.com,+91 92491 62423,2026-09-01 15:20:09 +0530,pending,1799.00,Cash on Delivery (COD),,0.00,Madhubani Peacock Print x1,Anjali Chatterjee
+#1009,neha.saxena96@yahoo.co.in,+91 95666 02981,2026-09-01 15:44:27 +0530,pending,1798.00,Cash on Delivery (COD),,0.00,Kolam Pattern Print x1 | Kolam Pattern Print x1,Neha Saxena
+#1010,rahul.malhotra68@outlook.com,+91 99562 03555,2026-09-01 15:50:58 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_XJKhjAzj2cYT4o,0.00,Gold Leaf Abstract Trio x1,Rahul Malhotra
+#1011,sneha.malhotra21@gmail.com,+91 92583 29169,2026-09-01 15:54:30 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_CrvXm6qRrEEjfP,0.00,Mandala Canvas 24x36 x1,Sneha Malhotra
+#1012,manoj.bhat6@gmail.com,+91 99825 10674,2026-09-01 17:53:11 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_rToxJGHvrHkaxs,0.00,Taj Sunset Panorama x1,Manoj Bhat
+#1013,vikram.shetty2@outlook.com,+91 95629 35360,2026-09-02 08:25:59 +0530,refunded,3598.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_wZAATDPeZjUGaQ,3598.00,Madhubani Peacock Print x1 | Warli Harvest Frame x1,Vikram Shetty
+#1014,harish.shetty85@gmail.com,+91 92723 26060,2026-09-02 11:51:24 +0530,paid,2298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_YVb3aXbyKmEhUK,0.00,Kolam Pattern Print x1 | Botanical Line Art Set x1,Harish Shetty
+#1015,manoj.sharma63@yahoo.co.in,+91 95985 74653,2026-09-02 13:27:53 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_bKfoC6DPcFpRpA,0.00,Gold Leaf Abstract Trio x1,Manoj Sharma
+#1016,siddharth.kapoor79@gmail.com,+91 92731 46467,2026-09-02 13:38:05 +0530,paid,4298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1 | Kerala Backwaters Canvas x1,Siddharth Kapoor
+#1017,neha.menon22@gmail.com,+91 92552 80066,2026-09-02 14:34:17 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_NVTPGAVGU6Fw9t,0.00,Buddha Meditation Canvas x1,Neha Menon
+#1018,isha.chatterjee3@gmail.com,+91 99093 70233,2026-09-02 15:33:42 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1,Isha Chatterjee
+#1019,arjun.pillai13@gmail.com,+91 96733 61901,2026-09-02 17:37:49 +0530,paid,6298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_6H8GBKvxiDSvxN,0.00,Buddha Meditation Canvas x1 | Taj Sunset Panorama x1,Arjun Pillai
+#1020,aditya.pillai58@outlook.com,+91 96319 92536,2026-09-02 19:04:40 +0530,paid,2519.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_d8FbQGc9wvpsFU,0.00,Buddha Meditation Canvas x1,Aditya Pillai
+#1021,arjun.hegde47@yahoo.co.in,+91 94921 73841,2026-09-03 08:13:08 +0530,paid,2798.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kolam Pattern Print x1 | Warli Harvest Frame x1,Arjun Hegde
+#1022,aarav.verma49@gmail.com,+91 93309 40736,2026-09-03 08:52:04 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_hEuHh4EjpCc3yX,0.00,Madhubani Peacock Print x1,Aarav Verma
+#1023,arjun.kulkarni43@outlook.com,+91 97177 63687,2026-09-03 09:03:11 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_JHjk4QooQeJCSm,0.00,Mandala Canvas 24x36 x1,Arjun Kulkarni
+#1024,isha.pillai32@outlook.com,+91 99569 71180,2026-09-03 10:16:48 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Jaipur Doors Collage x1,Isha Pillai
+#1025,deepa.menon22@yahoo.co.in,+91 92558 30571,2026-09-03 11:58:36 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_AnKVCjNxaBDE9Q,0.00,Gold Leaf Abstract Trio x1,Deepa Menon
+#1026,pooja.desai98@gmail.com,+91 96317 07999,2026-09-03 14:30:34 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_F9wBTNARtT8fd3,0.00,Gold Leaf Abstract Trio x1 | Warli Harvest Frame x1,Pooja Desai
+#1027,isha.pillai96@gmail.com,+91 90956 67632,2026-09-03 15:05:34 +0530,paid,3598.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_58pvSc2QN4hPT2,0.00,Jaipur Doors Collage x1 | Jaipur Doors Collage x1,Isha Pillai
+#1028,manoj.kulkarni23@gmail.com,+91 93001 56673,2026-09-03 15:31:22 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Ar6XTYfqvWMcrR,0.00,Buddha Meditation Canvas x1,Manoj Kulkarni
+#1029,priya.saxena79@outlook.com,+91 95562 53837,2026-09-03 16:03:39 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_DstJBmdWtLhyYF,0.00,Kolam Pattern Print x1,Priya Saxena
+#1030,harish.bhat92@gmail.com,+91 94780 76648,2026-09-03 16:13:58 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_PXtqRrvHwfGfLG,0.00,Botanical Line Art Set x1,Harish Bhat
+#1031,rohan.menon73@gmail.com,+91 92378 14743,2026-09-03 17:52:15 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_AdbEbfQ27h6u6f,0.00,Gold Leaf Abstract Trio x1,Rohan Menon
+#1032,ritu.chopra79@gmail.com,+91 94247 68916,2026-09-03 21:20:25 +0530,paid,2519.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_6ujk32hhn2FPvg,0.00,Buddha Meditation Canvas x1,Ritu Chopra
+#1033,arjun.malhotra70@gmail.com,+91 97938 42234,2026-09-03 21:51:10 +0530,paid,2249.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_mryKPJ4rxH68ka,0.00,Kerala Backwaters Canvas x1,Arjun Malhotra
+#1034,deepa.agarwal92@outlook.com,+91 96350 73794,2026-09-03 22:16:09 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_t5v4nAM3AG5K5t,0.00,Madhubani Peacock Print x1,Deepa Agarwal
+#1035,swati.hegde28@gmail.com,+91 92096 01157,2026-09-03 22:24:56 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1,Swati Hegde
+#1036,kavya.pillai24@outlook.com,+91 98660 94599,2026-09-04 11:46:48 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kolam Pattern Print x1,Kavya Pillai
+#1037,nikhil.kapoor59@gmail.com,+91 98056 26661,2026-09-04 13:49:01 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1,Nikhil Kapoor
+#1038,deepa.kapoor55@yahoo.co.in,+91 94477 26247,2026-09-04 15:13:00 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_9ih22CZMQDUGtx,0.00,Warli Harvest Frame x1,Deepa Kapoor
+#1039,rohan.banerjee99@outlook.com,+91 95663 46209,2026-09-04 16:08:39 +0530,paid,4798.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_RJEQbsdJVwVdsq,0.00,Buddha Meditation Canvas x1 | Jaipur Doors Collage x1,Rohan Banerjee
+#1040,isha.gupta95@yahoo.co.in,+91 95475 94765,2026-09-04 16:10:03 +0530,paid,2499.00,manual,,0.00,Kerala Backwaters Canvas x1,Isha Gupta
+#1041,arjun.kulkarni30@yahoo.co.in,+91 93365 44708,2026-09-04 16:12:45 +0530,pending,2499.00,Cash on Delivery (COD),,0.00,Kerala Backwaters Canvas x1,Arjun Kulkarni
+#1042,harish.agarwal44@yahoo.co.in,+91 95137 19160,2026-09-04 16:26:44 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_VvcPi47NqXRzdT,0.00,Taj Sunset Panorama x1,Harish Agarwal
+#1043,ritu.chatterjee45@gmail.com,+91 97981 40283,2026-09-04 16:31:32 +0530,paid,2499.00,manual,,0.00,Mandala Canvas 24x36 x1,Ritu Chatterjee
+#1044,nandini.shetty53@outlook.com,+91 92005 23280,2026-09-04 17:46:13 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1,Nandini Shetty
+#1045,divya.verma5@outlook.com,+91 98049 03976,2026-09-04 18:22:42 +0530,paid,4298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_F2v8pMpCRPwxkf,0.00,Warli Harvest Frame x1 | Kerala Backwaters Canvas x1,Divya Verma
+#1046,vikram.gupta31@yahoo.co.in,+91 99989 61718,2026-09-04 18:24:51 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Ym7DUH8Z85Fe7e,0.00,Botanical Line Art Set x1,Vikram Gupta
+#1047,arjun.joshi53@gmail.com,+91 97405 51041,2026-09-04 19:23:02 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1,Arjun Joshi
+#1048,anjali.gupta75@outlook.com,+91 90643 66053,2026-09-04 21:07:39 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Mandala Canvas 24x36 x1 | Buddha Meditation Canvas x1,Anjali Gupta
+#1049,aarav.banerjee46@gmail.com,+91 93045 90443,2026-09-04 22:30:01 +0530,paid,3798.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1 | Botanical Line Art Set x1,Aarav Banerjee
+#1050,pooja.sharma5@gmail.com,+91 92409 30748,2026-09-05 08:35:51 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_V3NgLuEN23wdqp,0.00,Taj Sunset Panorama x1,Pooja Sharma
+#1051,priya.joshi59@yahoo.co.in,+91 92606 22090,2026-09-05 09:05:29 +0530,paid,2519.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_ayZqx3ftmbY8kH,0.00,Buddha Meditation Canvas x1,Priya Joshi
+#1052,divya.agarwal50@gmail.com,+91 99477 60735,2026-09-05 10:28:34 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_iKU7NAadZosgyd,0.00,Kerala Backwaters Canvas x1,Divya Agarwal
+#1053,neha.joshi64@gmail.com,+91 96911 33248,2026-09-05 10:54:31 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_MRkRL7ue5cwt9z,0.00,Jaipur Doors Collage x1,Neha Joshi
+#1054,pooja.malhotra95@gmail.com,+91 93578 09363,2026-09-05 11:11:02 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_oQ8VhDide8X5Cz,0.00,Jaipur Doors Collage x1,Pooja Malhotra
+#1055,ananya.banerjee2@outlook.com,+91 92241 66221,2026-09-05 13:12:00 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_mi4M7rXXHbLcou,0.00,Mandala Canvas 24x36 x1,Ananya Banerjee
+#1056,rahul.chopra84@yahoo.co.in,+91 95128 34565,2026-09-05 14:02:39 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Botanical Line Art Set x1,Rahul Chopra
+#1057,rajesh.hegde66@yahoo.co.in,+91 91930 05410,2026-09-05 14:13:20 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_6PtdmgqCmQMBDu,0.00,Buddha Meditation Canvas x1 | Kerala Backwaters Canvas x1,Rajesh Hegde
+#1058,kavya.banerjee62@outlook.com,+91 91439 49950,2026-09-05 14:22:44 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_uAH6QBZbmCNvxx,0.00,Madhubani Peacock Print x1,Kavya Banerjee
+#1059,neha.patel6@outlook.com,+91 99312 71727,2026-09-05 14:38:05 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Gold Leaf Abstract Trio x1 | Warli Harvest Frame x1,Neha Patel
+#1060,divya.agarwal92@yahoo.co.in,+91 92776 31261,2026-09-05 15:01:52 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_MJgqNxECuWdkK5,0.00,Kerala Backwaters Canvas x1,Divya Agarwal
+#1061,divya.chatterjee3@yahoo.co.in,+91 99617 81036,2026-09-05 15:57:23 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_4KAhtmPZP96Tjq,0.00,Warli Harvest Frame x1,Divya Chatterjee
+#1062,ritu.pillai47@yahoo.co.in,+91 93392 91190,2026-09-05 16:48:25 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_QFxfKfBUvCa3jr,0.00,Botanical Line Art Set x1,Ritu Pillai
+#1063,nandini.joshi19@gmail.com,+91 90310 91052,2026-09-05 16:56:41 +0530,pending,2799.00,Cash on Delivery (COD),,0.00,Buddha Meditation Canvas x1,Nandini Joshi
+#1064,meera.shetty9@yahoo.co.in,+91 95089 51503,2026-09-05 22:14:47 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_BFZ3u3XNT2gpAV,0.00,Kolam Pattern Print x1,Meera Shetty
+#1065,vikram.shetty58@yahoo.co.in,+91 93340 73539,2026-09-06 08:38:08 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_ZtQbSwBRsoC5mc,0.00,Jaipur Doors Collage x1,Vikram Shetty
+#1066,arjun.sharma9@outlook.com,+91 96470 75519,2026-09-06 09:43:09 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_ReQx4brCMAoHzi,0.00,Gold Leaf Abstract Trio x1,Arjun Sharma
+#1067,nikhil.verma75@gmail.com,+91 97268 32754,2026-09-06 09:46:59 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_eoUxAuAXcYNtCG,0.00,Jaipur Doors Collage x1,Nikhil Verma
+#1068,kavya.saxena54@gmail.com,+91 95518 59081,2026-09-06 10:06:44 +0530,pending,5298.00,Cash on Delivery (COD),,0.00,Madhubani Peacock Print x1 | Taj Sunset Panorama x1,Kavya Saxena
+#1069,aditya.bose54@yahoo.co.in,+91 93410 51829,2026-09-06 10:15:05 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_i5JqYxG8aVmYEx,0.00,Jaipur Doors Collage x1,Aditya Bose
+#1070,vikram.patel40@outlook.com,+91 92942 44483,2026-09-06 13:48:59 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_qayPMjHLggnsBb,0.00,Gold Leaf Abstract Trio x1,Vikram Patel
+#1071,neha.bose38@gmail.com,+91 98451 54671,2026-09-06 15:02:25 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_zP4uXg4qQCrBVP,0.00,Taj Sunset Panorama x1,Neha Bose
+#1072,kavya.saxena10@gmail.com,+91 94228 21649,2026-09-06 17:24:11 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Madhubani Peacock Print x1,Kavya Saxena
+#1073,ananya.kapoor72@gmail.com,+91 98814 61128,2026-09-06 20:47:20 +0530,paid,6298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Uuxaz8U79ecwu9,0.00,Gold Leaf Abstract Trio x1 | Gold Leaf Abstract Trio x1,Ananya Kapoor
+#1074,ananya.agarwal59@gmail.com,+91 97146 63416,2026-09-07 08:16:16 +0530,paid,899.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_gsgMidjd3kiEYR,0.00,Kolam Pattern Print x1,Ananya Agarwal
+#1075,priya.shetty99@gmail.com,+91 92362 41516,2026-09-07 12:27:16 +0530,partially_refunded,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_RXS6JHgraCFc8d,1750.00,Taj Sunset Panorama x1,Priya Shetty
+#1076,rahul.sharma82@outlook.com,+91 99578 95558,2026-09-07 12:39:59 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1,Rahul Sharma
+#1077,pooja.desai6@gmail.com,+91 91333 76827,2026-09-07 15:18:40 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kolam Pattern Print x1,Pooja Desai
+#1078,gaurav.saxena29@gmail.com,+91 93930 88189,2026-09-07 15:25:18 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_DNZ5ShidQbc8Pp,0.00,Botanical Line Art Set x1,Gaurav Saxena
+#1079,ananya.patel49@gmail.com,+91 98112 53916,2026-09-07 16:50:02 +0530,partially_refunded,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_R96HKpQBe9AUuk,650.00,Botanical Line Art Set x1,Ananya Patel
+#1080,priya.banerjee23@gmail.com,+91 99151 89987,2026-09-07 19:34:53 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_yWeC2bHbUvcenb,0.00,Buddha Meditation Canvas x1,Priya Banerjee
+#1081,priya.desai59@gmail.com,+91 97854 12216,2026-09-07 20:24:17 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Madhubani Peacock Print x1,Priya Desai
+#1082,kavya.agarwal88@outlook.com,+91 95067 58788,2026-09-07 21:33:36 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_B3tzFu3Z6F9ccT,0.00,Gold Leaf Abstract Trio x1,Kavya Agarwal
+#1083,anjali.menon52@gmail.com,+91 91506 11307,2026-09-07 22:25:54 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Gold Leaf Abstract Trio x1,Anjali Menon
+#1084,divya.menon56@yahoo.co.in,+91 96282 72443,2026-09-08 08:15:05 +0530,paid,5498.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Jaipur Doors Collage x1 | Gold Leaf Abstract Trio x1,Divya Menon
+#1085,siddharth.hegde82@gmail.com,+91 97864 65149,2026-09-08 09:07:42 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_vDVx6Qv7tb83Pf,0.00,Kerala Backwaters Canvas x1,Siddharth Hegde
+#1086,meera.banerjee19@outlook.com,+91 98372 57283,2026-09-08 10:31:22 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1,Meera Banerjee
+#1087,deepa.hegde97@yahoo.co.in,+91 99389 45228,2026-09-08 13:05:33 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_TLDhVZdf9EQ3yF,0.00,Taj Sunset Panorama x1,Deepa Hegde
+#1088,kabir.kapoor63@outlook.com,+91 90993 02516,2026-09-08 14:34:09 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Gold Leaf Abstract Trio x1,Kabir Kapoor
+#1089,divya.patel81@gmail.com,+91 91536 69493,2026-09-08 15:56:44 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_rDHSJCymLc2RSB,0.00,Botanical Line Art Set x1,Divya Patel
+#1090,kavya.kapoor16@outlook.com,+91 97794 14109,2026-09-08 17:36:28 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Jaipur Doors Collage x1,Kavya Kapoor
+#1091,rajesh.menon26@outlook.com,+91 98611 47001,2026-09-08 17:47:54 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_EYPKexTUuoEyge,0.00,Buddha Meditation Canvas x1,Rajesh Menon
+#1092,manoj.sharma4@gmail.com,+91 95790 42579,2026-09-08 18:37:25 +0530,paid,2298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kolam Pattern Print x1 | Botanical Line Art Set x1,Manoj Sharma
+#1093,swati.patel76@gmail.com,+91 93280 08546,2026-09-08 18:46:55 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_uE9Mhn7JcS2aun,0.00,Madhubani Peacock Print x1,Swati Patel
+#1094,vikram.hegde86@outlook.com,+91 97037 76418,2026-09-08 19:21:06 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_7BejuscWAAHpGB,0.00,Kerala Backwaters Canvas x1,Vikram Hegde
+#1095,rahul.sharma14@yahoo.co.in,+91 91697 04701,2026-09-08 20:53:51 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_dAi7UHY36pqgHN,0.00,Warli Harvest Frame x1 | Taj Sunset Panorama x1,Rahul Sharma
+#1096,sneha.banerjee24@gmail.com,+91 95256 32630,2026-09-08 20:55:00 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_2fkntwxGkLwRbU,0.00,Warli Harvest Frame x1,Sneha Banerjee
+#1097,gaurav.verma17@gmail.com,+91 97635 12075,2026-09-08 22:41:12 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_wvDk2QRSkhXQgv,0.00,Madhubani Peacock Print x1,Gaurav Verma
+#1098,rahul.malhotra28@outlook.com,+91 91667 76647,2026-09-08 22:48:16 +0530,paid,6998.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_btE4k8duUUENUz,0.00,Gold Leaf Abstract Trio x1 | Taj Sunset Panorama x1,Rahul Malhotra
+#1099,pooja.joshi29@gmail.com,+91 94197 01747,2026-09-09 08:05:08 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_m5Xcy3BVwLZGhq,0.00,Warli Harvest Frame x1,Pooja Joshi
+#1100,priya.chatterjee21@yahoo.co.in,+91 92106 39698,2026-09-09 11:51:58 +0530,paid,1799.00,manual,,0.00,Madhubani Peacock Print x1,Priya Chatterjee
+#1101,swati.shetty83@gmail.com,+91 95529 17479,2026-09-09 14:56:16 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Botanical Line Art Set x1,Swati Shetty
+#1102,meera.kapoor92@outlook.com,+91 91547 99882,2026-09-09 15:14:35 +0530,paid,4598.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_U9G4ersCmm8ZKW,0.00,Buddha Meditation Canvas x1 | Warli Harvest Frame x1,Meera Kapoor
+#1103,kabir.desai15@gmail.com,+91 96250 44593,2026-09-09 16:59:36 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_uvyFjyj4bRVCpm,0.00,Warli Harvest Frame x1,Kabir Desai
+#1104,ananya.agarwal22@yahoo.co.in,+91 98083 05129,2026-09-09 18:00:12 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_8f2ERcozJk8Wkj,0.00,Mandala Canvas 24x36 x1,Ananya Agarwal
+#1105,meera.saxena95@gmail.com,+91 99263 40018,2026-09-09 19:49:11 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_q2vbB5PqpQ2TwU,0.00,Jaipur Doors Collage x1,Meera Saxena
+#1106,tanvi.desai78@yahoo.co.in,+91 96231 71467,2026-09-09 20:22:24 +0530,paid,1799.00,manual,,0.00,Warli Harvest Frame x1,Tanvi Desai
+#1107,kavya.hegde91@gmail.com,+91 91885 73601,2026-09-09 22:36:44 +0530,paid,3298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_opNDLk5Ra7nNMf,0.00,Botanical Line Art Set x1 | Jaipur Doors Collage x1,Kavya Hegde
+#1108,manoj.bhat58@outlook.com,+91 98945 01921,2026-09-10 10:05:22 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_hSzSvd4iVhcWeB,0.00,Taj Sunset Panorama x1 | Warli Harvest Frame x1,Manoj Bhat
+#1109,harish.gupta89@gmail.com,+91 99502 85389,2026-09-10 11:01:30 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_VzBpcfojSD93ub,0.00,Madhubani Peacock Print x1,Harish Gupta
+#1110,harish.desai20@gmail.com,+91 91022 50579,2026-09-10 13:12:34 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_fSXdxjPsvw23AA,0.00,Taj Sunset Panorama x1 | Warli Harvest Frame x1,Harish Desai
+#1111,ananya.joshi13@yahoo.co.in,+91 98670 72503,2026-09-10 15:20:20 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_P4rfEQitTgFPFx,0.00,Madhubani Peacock Print x1,Ananya Joshi
+#1112,isha.patel46@gmail.com,+91 93677 17605,2026-09-10 15:43:18 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Bu8qHqxEk8XFaa,0.00,Warli Harvest Frame x1,Isha Patel
+#1113,pooja.hegde52@gmail.com,+91 92680 77066,2026-09-10 17:25:38 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Madhubani Peacock Print x1,Pooja Hegde
+#1114,tanvi.bose63@yahoo.co.in,+91 95960 64706,2026-09-10 19:03:19 +0530,pending,3418.00,Cash on Delivery (COD),,0.00,Kolam Pattern Print x1 | Buddha Meditation Canvas x1,Tanvi Bose
+#1115,rohan.agarwal43@outlook.com,+91 99160 49140,2026-09-10 19:05:10 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1,Rohan Agarwal
+#1116,ananya.chatterjee5@yahoo.co.in,+91 93700 90777,2026-09-10 19:54:01 +0530,paid,4798.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_7R9tM92Bgo9yzE,0.00,Gold Leaf Abstract Trio x1 | Botanical Line Art Set x1,Ananya Chatterjee
+#1117,aarav.agarwal28@gmail.com,+91 96827 43833,2026-09-10 22:44:20 +0530,paid,3868.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Madhubani Peacock Print x1 | Mandala Canvas 24x36 x1,Aarav Agarwal
+#1118,ritu.chopra52@yahoo.co.in,+91 98743 72634,2026-09-10 22:52:20 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Buddha Meditation Canvas x1,Ritu Chopra
+#1119,rahul.patel27@outlook.com,+91 91666 46556,2026-09-11 10:58:28 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Gold Leaf Abstract Trio x1,Rahul Patel
+#1120,rajesh.banerjee90@gmail.com,+91 93516 79706,2026-09-11 13:43:21 +0530,paid,2799.00,manual,,0.00,Buddha Meditation Canvas x1,Rajesh Banerjee
+#1121,rohan.bhat28@gmail.com,+91 94211 34640,2026-09-11 14:14:29 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_9hze7pkzNpT2DG,0.00,Madhubani Peacock Print x1,Rohan Bhat
+#1122,rohan.chopra99@gmail.com,+91 91199 74114,2026-09-11 15:40:25 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Madhubani Peacock Print x1,Rohan Chopra
+#1123,vikram.agarwal73@yahoo.co.in,+91 94081 16084,2026-09-11 15:53:48 +0530,paid,2799.00,manual,,0.00,Buddha Meditation Canvas x1,Vikram Agarwal
+#1124,meera.shetty22@gmail.com,+91 93311 41415,2026-09-11 16:13:26 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_8MeBJPXXFUnZsa,0.00,Buddha Meditation Canvas x1,Meera Shetty
+#1125,aarav.hegde44@yahoo.co.in,+91 98324 10914,2026-09-11 17:07:04 +0530,pending,1619.00,Cash on Delivery (COD),,0.00,Warli Harvest Frame x1,Aarav Hegde
+#1126,priya.malhotra79@gmail.com,+91 90102 92260,2026-09-11 17:22:04 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_ntohZV8SAigSvz,0.00,Gold Leaf Abstract Trio x1,Priya Malhotra
+#1127,siddharth.banerjee22@yahoo.co.in,+91 97632 32798,2026-09-11 20:56:58 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_b52HKptTe5bfah,0.00,Jaipur Doors Collage x1,Siddharth Banerjee
+#1128,anjali.bose23@gmail.com,+91 95636 24845,2026-09-11 22:18:20 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_RiKW8m54Eb2LV2,0.00,Mandala Canvas 24x36 x1,Anjali Bose
+#1129,aditya.desai64@yahoo.co.in,+91 96218 92279,2026-09-12 09:06:56 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_TfhaybyicvoseJ,0.00,Gold Leaf Abstract Trio x1,Aditya Desai
+#1130,meera.verma90@gmail.com,+91 98828 64831,2026-09-12 09:31:53 +0530,paid,1169.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_iv2DPeJWEEJCp8,0.00,Botanical Line Art Set x1,Meera Verma
+#1131,manoj.chopra72@yahoo.co.in,+91 97832 54825,2026-09-12 09:44:45 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kolam Pattern Print x1,Manoj Chopra
+#1132,tanvi.saxena35@yahoo.co.in,+91 96725 46878,2026-09-12 11:46:04 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Buddha Meditation Canvas x1,Tanvi Saxena
+#1133,tanvi.shetty24@outlook.com,+91 90563 95040,2026-09-12 11:53:19 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_rfFarDAGHjZMWk,0.00,Taj Sunset Panorama x1,Tanvi Shetty
+#1134,rajesh.patel5@yahoo.co.in,+91 93035 30414,2026-09-12 15:14:09 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_6SJFTthNiXaKXg,0.00,Buddha Meditation Canvas x1,Rajesh Patel
+#1135,arjun.banerjee54@gmail.com,+91 98725 53984,2026-09-12 19:41:59 +0530,pending,3499.00,Cash on Delivery (COD),,0.00,Taj Sunset Panorama x1,Arjun Banerjee
+#1136,swati.hegde3@yahoo.co.in,+91 95637 19980,2026-09-12 19:55:26 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_XuAcuGRrBuqhAU,0.00,Warli Harvest Frame x1,Swati Hegde
+#1137,kavya.sharma67@yahoo.co.in,+91 93553 39718,2026-09-12 20:31:21 +0530,paid,4298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_EhMUtxbL5b88qh,0.00,Warli Harvest Frame x1 | Kerala Backwaters Canvas x1,Kavya Sharma
+#1138,gaurav.chatterjee24@gmail.com,+91 93087 34011,2026-09-12 21:11:43 +0530,paid,2519.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_eNJYSdcwC7U2NF,0.00,Buddha Meditation Canvas x1,Gaurav Chatterjee
+#1139,tanvi.joshi60@gmail.com,+91 99575 99231,2026-09-12 21:31:05 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_rbFUDkwUZgVNFf,0.00,Warli Harvest Frame x1,Tanvi Joshi
+#1140,rahul.joshi70@gmail.com,+91 90030 26218,2026-09-12 21:31:18 +0530,paid,2249.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Mandala Canvas 24x36 x1,Rahul Joshi
+#1141,sneha.desai19@gmail.com,+91 98382 78082,2026-09-12 22:32:35 +0530,paid,6298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_D5mTofKMEVR5kd,0.00,Gold Leaf Abstract Trio x1 | Buddha Meditation Canvas x1,Sneha Desai
+#1142,ritu.chatterjee91@gmail.com,+91 91603 82723,2026-09-12 22:52:47 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_AKT58yqzMCCayQ,0.00,Madhubani Peacock Print x1,Ritu Chatterjee
+#1143,ritu.gupta33@yahoo.co.in,+91 94519 63798,2026-09-13 10:34:08 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_RzJh572am5tMBs,0.00,Taj Sunset Panorama x1,Ritu Gupta
+#1144,vikram.banerjee31@yahoo.co.in,+91 94379 89969,2026-09-13 10:52:44 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_MzocWup9HFvrSU,0.00,Buddha Meditation Canvas x1,Vikram Banerjee
+#1145,ritu.bose53@gmail.com,+91 94854 82844,2026-09-13 11:13:22 +0530,paid,4598.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_FKShrJU3YPrpdD,0.00,Buddha Meditation Canvas x1 | Warli Harvest Frame x1,Ritu Bose
+#1146,deepa.desai59@outlook.com,+91 98052 36759,2026-09-13 14:12:50 +0530,paid,4598.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_TPjrRNYkNEZSTc,0.00,Buddha Meditation Canvas x1 | Warli Harvest Frame x1,Deepa Desai
+#1147,ritu.patel92@outlook.com,+91 92270 56258,2026-09-13 15:58:31 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_iSFxu7DNe65QUp,0.00,Taj Sunset Panorama x1,Ritu Patel
+#1148,rajesh.patel57@yahoo.co.in,+91 96540 79977,2026-09-13 17:05:08 +0530,paid,3418.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_3JtszfmwByGnfE,0.00,Kerala Backwaters Canvas x1 | Botanical Line Art Set x1,Rajesh Patel
+#1149,rohan.hegde11@outlook.com,+91 90249 24459,2026-09-13 18:52:21 +0530,refunded,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_2BB3vXbrfKBc5H,1799.00,Warli Harvest Frame x1,Rohan Hegde
+#1150,manoj.saxena24@gmail.com,+91 97020 80420,2026-09-13 22:50:07 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_4zR7BN7CYDwDpp,0.00,Botanical Line Art Set x1,Manoj Saxena
+#1151,gaurav.kulkarni46@outlook.com,+91 91941 07946,2026-09-14 11:04:21 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_2tmudLwebs4mSU,0.00,Buddha Meditation Canvas x1,Gaurav Kulkarni
+#1152,tanvi.pillai79@gmail.com,+91 93201 97976,2026-09-14 15:13:47 +0530,pending,1999.00,Cash on Delivery (COD),,0.00,Jaipur Doors Collage x1,Tanvi Pillai
+#1153,rohan.banerjee76@yahoo.co.in,+91 90968 25558,2026-09-14 15:58:17 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_L3zWDXFxhbcfSu,0.00,Kerala Backwaters Canvas x1,Rohan Banerjee
+#1154,varun.malhotra9@gmail.com,+91 91271 93970,2026-09-14 17:02:51 +0530,pending,1799.00,Cash on Delivery (COD),,0.00,Warli Harvest Frame x1,Varun Malhotra
+#1155,divya.desai36@gmail.com,+91 90413 95267,2026-09-14 17:41:55 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Gold Leaf Abstract Trio x1,Divya Desai
+#1156,neha.desai25@gmail.com,+91 91058 47012,2026-09-15 08:37:08 +0530,pending,2499.00,Cash on Delivery (COD),,0.00,Mandala Canvas 24x36 x1,Neha Desai
+#1157,vikram.chopra57@outlook.com,+91 96893 10481,2026-09-15 11:29:13 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_kUL65eNCf8dT4t,0.00,Taj Sunset Panorama x1,Vikram Chopra
+#1158,suresh.kulkarni83@outlook.com,+91 97305 58024,2026-09-15 15:22:45 +0530,paid,3499.00,manual,,0.00,Taj Sunset Panorama x1,Suresh Kulkarni
+#1159,anjali.chopra73@outlook.com,+91 99153 47286,2026-09-15 17:34:01 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1,Anjali Chopra
+#1160,rahul.bose34@outlook.com,+91 98016 91589,2026-09-15 21:42:13 +0530,paid,3499.00,manual,,0.00,Gold Leaf Abstract Trio x1,Rahul Bose
+#1161,anjali.pillai90@gmail.com,+91 97244 30534,2026-09-15 21:49:17 +0530,pending,1299.00,Cash on Delivery (COD),,0.00,Botanical Line Art Set x1,Anjali Pillai
+#1162,rajesh.banerjee70@yahoo.co.in,+91 94036 08162,2026-09-16 08:53:01 +0530,paid,899.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_wedpFws5DYvaoY,0.00,Kolam Pattern Print x1,Rajesh Banerjee
+#1163,isha.saxena20@outlook.com,+91 98958 66539,2026-09-16 08:59:21 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_ha7EZeMg5wSwMd,0.00,Gold Leaf Abstract Trio x1,Isha Saxena
+#1164,rajesh.saxena20@yahoo.co.in,+91 91371 00116,2026-09-16 09:06:24 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_dyRcpKFD8iXtJQ,0.00,Madhubani Peacock Print x1,Rajesh Saxena
+#1165,deepa.malhotra68@outlook.com,+91 99099 37656,2026-09-16 11:18:19 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_ze5BDXZYL3WJsu,0.00,Buddha Meditation Canvas x1,Deepa Malhotra
+#1166,harish.bose7@gmail.com,+91 93538 84723,2026-09-16 11:56:11 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Cr8A4ou7H23sK9,0.00,Gold Leaf Abstract Trio x1,Harish Bose
+#1167,gaurav.malhotra98@gmail.com,+91 98648 99009,2026-09-16 12:19:07 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_R7AWd5B64o3FFy,0.00,Kerala Backwaters Canvas x1,Gaurav Malhotra
+#1168,aditya.hegde6@gmail.com,+91 91189 92042,2026-09-16 14:43:21 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_YcYjeriV3oVDZ2,0.00,Mandala Canvas 24x36 x1,Aditya Hegde
+#1169,rajesh.chatterjee2@yahoo.co.in,+91 92145 47738,2026-09-16 15:20:48 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_57fNqrqVSqPLHY,0.00,Buddha Meditation Canvas x1,Rajesh Chatterjee
+#1170,tanvi.kapoor47@gmail.com,+91 99937 45408,2026-09-16 16:09:00 +0530,partially_refunded,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Yk7qkLDS4XC8Jc,1250.00,Mandala Canvas 24x36 x1,Tanvi Kapoor
+#1171,arjun.saxena8@outlook.com,+91 96475 02120,2026-09-16 16:11:52 +0530,paid,5498.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_cqVxmLtENRQnZ7,0.00,Taj Sunset Panorama x1 | Jaipur Doors Collage x1,Arjun Saxena
+#1172,vikram.bhat72@gmail.com,+91 92262 86021,2026-09-16 20:09:28 +0530,pending,1799.00,Cash on Delivery (COD),,0.00,Madhubani Peacock Print x1,Vikram Bhat
+#1173,anjali.agarwal2@gmail.com,+91 96496 20436,2026-09-16 20:42:35 +0530,pending,2499.00,Cash on Delivery (COD),,0.00,Mandala Canvas 24x36 x1,Anjali Agarwal
+#1174,ritu.menon10@yahoo.co.in,+91 93090 99416,2026-09-17 10:40:03 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_eQxZ7xb52M5UJF,0.00,Madhubani Peacock Print x1,Ritu Menon
+#1175,rajesh.saxena11@gmail.com,+91 98704 22422,2026-09-17 11:20:21 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kolam Pattern Print x1,Rajesh Saxena
+#1176,kavya.bhat36@yahoo.co.in,+91 95315 96883,2026-09-17 12:17:06 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_9UZBPNkf4FA4YR,0.00,Buddha Meditation Canvas x1,Kavya Bhat
+#1177,gaurav.hegde49@gmail.com,+91 96318 15789,2026-09-17 12:53:39 +0530,pending,2249.00,Cash on Delivery (COD),,0.00,Kerala Backwaters Canvas x1,Gaurav Hegde
+#1178,tanvi.verma9@gmail.com,+91 92573 47988,2026-09-17 12:58:39 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_oTCMPCb2t6R39e,0.00,Gold Leaf Abstract Trio x1,Tanvi Verma
+#1179,vikram.patel45@gmail.com,+91 95325 93436,2026-09-17 14:29:01 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_DVnLthy8fST633,0.00,Madhubani Peacock Print x1,Vikram Patel
+#1180,meera.shetty53@gmail.com,+91 91156 35532,2026-09-17 15:11:50 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Madhubani Peacock Print x1,Meera Shetty
+#1181,nikhil.patel80@gmail.com,+91 99119 14078,2026-09-17 15:33:17 +0530,paid,4298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_v8n6MtVP2VPP9f,0.00,Warli Harvest Frame x1 | Mandala Canvas 24x36 x1,Nikhil Patel
+#1182,neha.joshi26@outlook.com,+91 94411 80519,2026-09-17 16:55:26 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_VVuShshLwNT7zQ,0.00,Taj Sunset Panorama x1,Neha Joshi
+#1183,vikram.hegde61@yahoo.co.in,+91 93856 04985,2026-09-17 20:47:17 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_TkUg8rek4ZSefH,0.00,Kolam Pattern Print x1,Vikram Hegde
+#1184,nikhil.menon45@outlook.com,+91 92100 16029,2026-09-17 21:29:23 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_nBxGxSu5fw6pfd,0.00,Kolam Pattern Print x1,Nikhil Menon
+#1185,ritu.desai85@gmail.com,+91 92626 22790,2026-09-18 08:05:09 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1,Ritu Desai
+#1186,isha.bhat54@yahoo.co.in,+91 90799 12136,2026-09-18 09:28:59 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_WTrjvB2RZfX334,0.00,Taj Sunset Panorama x1,Isha Bhat
+#1187,rahul.kapoor69@yahoo.co.in,+91 98476 29559,2026-09-18 10:55:14 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_PQqUYZ2QUr4Rso,0.00,Botanical Line Art Set x1,Rahul Kapoor
+#1188,anjali.banerjee31@gmail.com,+91 95898 77501,2026-09-18 12:20:37 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_RZgpmqyvB3ryAg,0.00,Gold Leaf Abstract Trio x1 | Warli Harvest Frame x1,Anjali Banerjee
+#1189,rohan.bose67@gmail.com,+91 91611 23236,2026-09-18 17:12:59 +0530,refunded,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_ZzDhvLtjLRLPDv,3499.00,Taj Sunset Panorama x1,Rohan Bose
+#1190,ananya.joshi18@yahoo.co.in,+91 93304 25360,2026-09-18 17:44:07 +0530,paid,3149.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_5aUyhcGTqcsFdV,0.00,Gold Leaf Abstract Trio x1,Ananya Joshi
+#1191,siddharth.menon42@gmail.com,+91 91899 07561,2026-09-18 17:57:17 +0530,paid,3098.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1 | Botanical Line Art Set x1,Siddharth Menon
+#1192,priya.gupta56@outlook.com,+91 90381 40577,2026-09-18 19:02:36 +0530,paid,899.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_2vFj4gV7ar3YRt,0.00,Kolam Pattern Print x1,Priya Gupta
+#1193,vikram.menon19@gmail.com,+91 95872 21661,2026-09-18 19:22:52 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_aTYNzvwQ5d56YQ,0.00,Gold Leaf Abstract Trio x1,Vikram Menon
+#1194,aditya.chatterjee89@yahoo.co.in,+91 95110 80961,2026-09-19 09:21:23 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_hXygzBexZvE5UY,0.00,Jaipur Doors Collage x1,Aditya Chatterjee
+#1195,deepa.sharma1@yahoo.co.in,+91 98103 45796,2026-09-19 10:36:17 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1,Deepa Sharma
+#1196,venkatesh.murthy42@yahoo.co.in,+91 99775 14687,2026-09-19 12:39:14 +0530,paid,2499.00,manual,,0.00,Mandala Canvas 24x36 x1,Venkatesh Murthy
+#1197,nandini.malhotra55@gmail.com,+91 94819 31734,2026-09-19 13:13:37 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_AQd5e3NdpLcLWt,0.00,Botanical Line Art Set x1,Nandini Malhotra
+#1198,tanvi.chopra34@gmail.com,+91 92172 06748,2026-09-19 13:16:43 +0530,paid,4498.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Xy3hySmwGkcauB,0.00,Jaipur Doors Collage x1 | Kerala Backwaters Canvas x1,Tanvi Chopra
+#1199,manoj.sharma46@outlook.com,+91 97147 87159,2026-09-19 13:59:30 +0530,paid,6298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_f45TrPa9WYjcTU,0.00,Buddha Meditation Canvas x1 | Gold Leaf Abstract Trio x1,Manoj Sharma
+#1200,sneha.pillai51@gmail.com,+91 96657 16656,2026-09-19 14:27:52 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_bJeKVi3ZaP5puC,0.00,Warli Harvest Frame x1,Sneha Pillai
+#1201,sneha.verma80@gmail.com,+91 99933 75021,2026-09-19 15:01:40 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Botanical Line Art Set x1,Sneha Verma
+#1202,tanvi.sharma94@yahoo.co.in,+91 92205 50595,2026-09-19 16:35:32 +0530,refunded,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_CFfnD5Tyu6g4sz,2799.00,Buddha Meditation Canvas x1,Tanvi Sharma
+#1203,lakshmi.iyer45@yahoo.co.in,+91 97918 22851,2026-09-19 20:37:39 +0530,paid,2499.00,manual,,0.00,Mandala Canvas 24x36 x1,Lakshmi Iyer
+#1204,tanvi.kapoor11@yahoo.co.in,+91 91771 69211,2026-09-20 09:20:13 +0530,pending,3499.00,Cash on Delivery (COD),,0.00,Gold Leaf Abstract Trio x1,Tanvi Kapoor
+#1205,rajesh.hegde23@outlook.com,+91 92067 67294,2026-09-20 09:30:33 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_PgWD2P2mB82LFB,0.00,Kolam Pattern Print x1,Rajesh Hegde
+#1206,priya.bose42@yahoo.co.in,+91 97214 85745,2026-09-20 10:06:53 +0530,paid,3149.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_gbEosM53xmDNq8,0.00,Gold Leaf Abstract Trio x1,Priya Bose
+#1207,suresh.sharma12@gmail.com,+91 93318 69617,2026-09-20 10:39:21 +0530,refunded,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_RFQVMhe5RwwafW,1799.00,Warli Harvest Frame x1,Suresh Sharma
+#1208,nikhil.hegde67@yahoo.co.in,+91 97190 42763,2026-09-20 12:03:09 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Madhubani Peacock Print x1,Nikhil Hegde
+#1209,meera.banerjee97@outlook.com,+91 94005 26033,2026-09-20 15:03:02 +0530,refunded,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_HLqwRZkwbDvnuj,1799.00,Madhubani Peacock Print x1,Meera Banerjee
+#1210,nikhil.chopra93@gmail.com,+91 92834 83588,2026-09-20 15:28:45 +0530,paid,899.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_iBCPyr5aJjbSyo,0.00,Kolam Pattern Print x1,Nikhil Chopra
+#1211,kabir.malhotra46@outlook.com,+91 98725 97487,2026-09-20 15:48:36 +0530,paid,2249.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_qsCs4FRkjgZUGh,0.00,Mandala Canvas 24x36 x1,Kabir Malhotra
+#1212,ritu.agarwal5@outlook.com,+91 90183 12568,2026-09-20 16:39:04 +0530,paid,4298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_aw4coxzefcWced,0.00,Madhubani Peacock Print x1 | Kerala Backwaters Canvas x1,Ritu Agarwal
+#1213,kavya.kapoor51@outlook.com,+91 95832 45751,2026-09-20 20:51:31 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_43kivJRhQrW3UQ,0.00,Botanical Line Art Set x1,Kavya Kapoor
+#1214,kavya.sharma70@gmail.com,+91 95407 15172,2026-09-20 20:52:46 +0530,refunded,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_hEYDcbKFv8etpe,1799.00,Madhubani Peacock Print x1,Kavya Sharma
+#1215,vikram.kulkarni99@gmail.com,+91 99133 69555,2026-09-20 22:37:47 +0530,paid,4298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_tbTRPavWibhvb8,0.00,Warli Harvest Frame x1 | Kerala Backwaters Canvas x1,Vikram Kulkarni
+#1216,suresh.bhat21@gmail.com,+91 97014 09544,2026-09-21 09:00:34 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kolam Pattern Print x1,Suresh Bhat
+#1217,siddharth.shetty25@gmail.com,+91 98513 00895,2026-09-21 14:16:12 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1,Siddharth Shetty
+#1218,harish.desai29@yahoo.co.in,+91 90749 08593,2026-09-21 16:23:41 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Jaipur Doors Collage x1,Harish Desai
+#1219,divya.pillai74@outlook.com,+91 96970 46019,2026-09-21 19:38:37 +0530,paid,4098.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_kujAyhHQxtEt4Q,0.00,Buddha Meditation Canvas x1 | Botanical Line Art Set x1,Divya Pillai
+#1220,kabir.bhat83@yahoo.co.in,+91 92964 86788,2026-09-21 20:28:56 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_MvVHCUHnZDQhdm,0.00,Taj Sunset Panorama x1,Kabir Bhat
+#1221,kabir.saxena5@gmail.com,+91 93341 32777,2026-09-21 21:24:07 +0530,paid,3149.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_AzDRrFbJCNujH9,0.00,Gold Leaf Abstract Trio x1,Kabir Saxena
+#1222,varun.verma34@outlook.com,+91 90846 41876,2026-09-21 21:56:18 +0530,paid,3798.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_zoEWY8jaBNihpB,0.00,Kolam Pattern Print x1 | Buddha Meditation Canvas x1,Varun Verma
+#1223,rohan.menon42@gmail.com,+91 95429 51841,2026-09-22 08:06:42 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_G65mWFbbXjjdmd,0.00,Mandala Canvas 24x36 x1,Rohan Menon
+#1224,rohan.desai51@yahoo.co.in,+91 96580 16539,2026-09-22 08:19:19 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_WKA6DZbdFW8Pg4,0.00,Mandala Canvas 24x36 x1,Rohan Desai
+#1225,neha.bhat74@yahoo.co.in,+91 95996 24083,2026-09-22 08:43:53 +0530,paid,3149.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_dTvpV7JQQUm8mW,0.00,Taj Sunset Panorama x1,Neha Bhat
+#1226,harish.hegde53@yahoo.co.in,+91 99282 72443,2026-09-22 10:15:32 +0530,paid,1299.00,manual,,0.00,Botanical Line Art Set x1,Harish Hegde
+#1227,deepa.shetty55@yahoo.co.in,+91 98263 40188,2026-09-22 11:35:01 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_xTGZ3DCrmXxtXA,0.00,Kerala Backwaters Canvas x1,Deepa Shetty
+#1228,aarav.shetty33@yahoo.co.in,+91 92357 96084,2026-09-22 11:56:52 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_FaotXfZBdEWQQS,0.00,Jaipur Doors Collage x1,Aarav Shetty
+#1229,anjali.verma15@outlook.com,+91 98789 20547,2026-09-22 14:41:43 +0530,pending,2499.00,Cash on Delivery (COD),,0.00,Mandala Canvas 24x36 x1,Anjali Verma
+#1230,tanvi.chatterjee24@gmail.com,+91 98074 43639,2026-09-22 15:32:32 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_z56SfusWJKtxYj,0.00,Gold Leaf Abstract Trio x1,Tanvi Chatterjee
+#1231,manoj.chatterjee54@outlook.com,+91 97300 55732,2026-09-22 15:49:59 +0530,paid,1299.00,manual,,0.00,Botanical Line Art Set x1,Manoj Chatterjee
+#1232,kabir.chatterjee22@yahoo.co.in,+91 92571 21881,2026-09-22 16:41:05 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Y7ibZY442y2UZX,0.00,Gold Leaf Abstract Trio x1,Kabir Chatterjee
+#1233,sneha.menon3@yahoo.co.in,+91 91985 60854,2026-09-22 18:39:22 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Gold Leaf Abstract Trio x1,Sneha Menon
+#1234,pooja.bhat87@outlook.com,+91 97462 19790,2026-09-22 21:37:00 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_vLETq7aDfm2Th9,0.00,Madhubani Peacock Print x1,Pooja Bhat
+#1235,priya.desai45@gmail.com,+91 97529 58298,2026-09-22 21:57:06 +0530,paid,2519.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_8c5omTJSWrgw9U,0.00,Buddha Meditation Canvas x1,Priya Desai
+#1236,rohan.patel4@gmail.com,+91 90394 94402,2026-09-22 22:38:32 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Jaipur Doors Collage x1,Rohan Patel
+#1237,tanvi.gupta64@yahoo.co.in,+91 91207 88761,2026-09-23 10:53:00 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_mVQG8Vo72AiF3F,0.00,Madhubani Peacock Print x1,Tanvi Gupta
+#1238,rohan.banerjee27@gmail.com,+91 91862 19618,2026-09-23 11:50:57 +0530,refunded,3098.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_go6b5xniQFyJCn,3098.00,Madhubani Peacock Print x1 | Botanical Line Art Set x1,Rohan Banerjee
+#1239,swati.kapoor54@outlook.com,+91 93747 56739,2026-09-23 14:43:17 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_cvG2JNPPZEMsyB,0.00,Kolam Pattern Print x1,Swati Kapoor
+#1240,ananya.verma8@gmail.com,+91 94670 10512,2026-09-23 14:57:05 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_BVu7eyfnE53qGs,0.00,Warli Harvest Frame x1,Ananya Verma
+#1241,harish.patel60@outlook.com,+91 92036 59855,2026-09-23 14:59:19 +0530,paid,5998.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1 | Kerala Backwaters Canvas x1,Harish Patel
+#1242,swati.sharma67@gmail.com,+91 92307 99439,2026-09-23 16:39:51 +0530,paid,4298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_hHSaH4dP9dzPeW,0.00,Madhubani Peacock Print x1 | Mandala Canvas 24x36 x1,Swati Sharma
+#1243,manoj.agarwal76@gmail.com,+91 93912 99394,2026-09-23 20:09:39 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_bT6FhYLi3FkKBf,0.00,Gold Leaf Abstract Trio x1,Manoj Agarwal
+#1244,deepa.shetty86@outlook.com,+91 99067 34524,2026-09-23 21:40:16 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_opv3yuo7r5pJov,0.00,Botanical Line Art Set x1,Deepa Shetty
+#1245,gaurav.kapoor41@yahoo.co.in,+91 99573 99373,2026-09-24 10:44:50 +0530,pending,1619.00,Cash on Delivery (COD),,0.00,Warli Harvest Frame x1,Gaurav Kapoor
+#1246,anjali.desai8@yahoo.co.in,+91 96481 38820,2026-09-24 13:23:45 +0530,paid,2799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_cwXaiduT9oXjfr,0.00,Buddha Meditation Canvas x1,Anjali Desai
+#1247,rahul.patel45@yahoo.co.in,+91 99745 47710,2026-09-24 13:40:50 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1,Rahul Patel
+#1248,siddharth.desai23@gmail.com,+91 91848 74532,2026-09-24 13:56:23 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_rNfUpfdxH9dwpF,0.00,Kerala Backwaters Canvas x1,Siddharth Desai
+#1249,neha.hegde17@outlook.com,+91 98356 62501,2026-09-24 15:57:42 +0530,paid,1999.00,manual,,0.00,Jaipur Doors Collage x1,Neha Hegde
+#1250,rajesh.joshi58@gmail.com,+91 95223 33566,2026-09-24 16:45:13 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1,Rajesh Joshi
+#1251,anjali.banerjee64@gmail.com,+91 90244 59729,2026-09-24 18:35:37 +0530,paid,2249.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1,Anjali Banerjee
+#1252,rahul.kapoor32@yahoo.co.in,+91 99584 34645,2026-09-24 19:01:26 +0530,paid,1999.00,manual,,0.00,Jaipur Doors Collage x1,Rahul Kapoor
+#1253,swati.shetty88@outlook.com,+91 97215 11394,2026-09-24 19:48:51 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1,Swati Shetty
+#1254,deepa.banerjee50@outlook.com,+91 95337 92126,2026-09-24 21:03:46 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_CTBGzASaQzokSb,0.00,Kerala Backwaters Canvas x1,Deepa Banerjee
+#1255,neha.patel20@gmail.com,+91 99505 88159,2026-09-24 21:05:54 +0530,paid,2519.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Buddha Meditation Canvas x1,Neha Patel
+#1256,rahul.menon6@gmail.com,+91 90149 31696,2026-09-24 22:15:06 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_3W7pd7JTxXcyFB,0.00,Madhubani Peacock Print x1,Rahul Menon
+#1257,divya.sharma91@outlook.com,+91 92337 59870,2026-09-24 22:54:00 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Gold Leaf Abstract Trio x1,Divya Sharma
+#1258,vikram.patel54@gmail.com,+91 90707 20677,2026-09-25 08:23:17 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_5YYonpWU78Aasr,0.00,Mandala Canvas 24x36 x1,Vikram Patel
+#1259,suresh.verma3@gmail.com,+91 91309 89524,2026-09-25 09:41:42 +0530,pending,2499.00,Cash on Delivery (COD),,0.00,Kerala Backwaters Canvas x1,Suresh Verma
+#1260,nandini.gupta20@yahoo.co.in,+91 98503 23144,2026-09-25 10:13:52 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_X6nHdU2mzsu4LT,0.00,Mandala Canvas 24x36 x1,Nandini Gupta
+#1261,manoj.banerjee24@outlook.com,+91 93373 94522,2026-09-25 10:17:01 +0530,paid,3498.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1 | Kolam Pattern Print x1,Manoj Banerjee
+#1262,aarav.joshi97@outlook.com,+91 96875 07764,2026-09-25 12:08:11 +0530,paid,4498.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_3xN37Lzztr2Jic,0.00,Jaipur Doors Collage x1 | Mandala Canvas 24x36 x1,Aarav Joshi
+#1263,aditya.hegde29@gmail.com,+91 92056 74462,2026-09-25 12:29:16 +0530,paid,2249.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Mandala Canvas 24x36 x1,Aditya Hegde
+#1264,pooja.saxena3@gmail.com,+91 96855 00696,2026-09-25 14:56:20 +0530,paid,5298.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1 | Madhubani Peacock Print x1,Pooja Saxena
+#1265,harish.banerjee2@gmail.com,+91 97387 51703,2026-09-25 15:36:57 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_se6nc9pMJKgvvd,0.00,Taj Sunset Panorama x1,Harish Banerjee
+#1266,sneha.kulkarni27@outlook.com,+91 96424 38690,2026-09-25 16:13:44 +0530,paid,2249.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_mPscRBB8xnHfMR,0.00,Mandala Canvas 24x36 x1,Sneha Kulkarni
+#1267,arjun.desai81@outlook.com,+91 91643 93217,2026-09-25 17:11:14 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Botanical Line Art Set x1,Arjun Desai
+#1268,varun.hegde96@gmail.com,+91 91532 39975,2026-09-25 17:51:24 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Warli Harvest Frame x1,Varun Hegde
+#1269,neha.sharma64@outlook.com,+91 99774 41215,2026-09-25 18:38:09 +0530,paid,1619.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_ZeWWy9VbqRiehP,0.00,Madhubani Peacock Print x1,Neha Sharma
+#1270,harish.saxena16@outlook.com,+91 99657 98093,2026-09-25 20:42:29 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_MGGLvVdJKqzcAL,0.00,Warli Harvest Frame x1,Harish Saxena
+#1271,rajesh.menon81@gmail.com,+91 93168 93578,2026-09-25 22:22:11 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_mirqsmBM5HHuwL,0.00,Mandala Canvas 24x36 x1,Rajesh Menon
+#1272,rajesh.agarwal28@yahoo.co.in,+91 98436 49645,2026-09-26 08:43:53 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Madhubani Peacock Print x1,Rajesh Agarwal
+#1273,divya.kulkarni84@yahoo.co.in,+91 94968 74289,2026-09-26 09:59:19 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_kprbVvBy8mkuNv,0.00,Warli Harvest Frame x1,Divya Kulkarni
+#1274,pooja.banerjee20@gmail.com,+91 93111 62827,2026-09-26 09:59:57 +0530,paid,899.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Z3RxDPNqFWdkrD,0.00,Kolam Pattern Print x1,Pooja Banerjee
+#1275,rajesh.saxena84@yahoo.co.in,+91 99031 15748,2026-09-26 10:01:58 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Kerala Backwaters Canvas x1,Rajesh Saxena
+#1276,sneha.banerjee89@outlook.com,+91 92981 74313,2026-09-26 12:00:34 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_K3VzUHCjwHuA4g,0.00,Madhubani Peacock Print x1,Sneha Banerjee
+#1277,harish.sharma47@gmail.com,+91 91428 03231,2026-09-26 13:57:42 +0530,paid,2249.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Mandala Canvas 24x36 x1,Harish Sharma
+#1278,nandini.patel90@yahoo.co.in,+91 95423 83325,2026-09-26 15:29:24 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_4ZqVhNxjKt6iFK,0.00,Mandala Canvas 24x36 x1,Nandini Patel
+#1279,aarav.chatterjee27@gmail.com,+91 93830 43185,2026-09-26 17:00:06 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_nUKu99kkzR7xrH,0.00,Warli Harvest Frame x1,Aarav Chatterjee
+#1280,nikhil.kapoor12@yahoo.co.in,+91 91430 05986,2026-09-26 20:14:08 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_RDoUhxpVvDNg9o,0.00,Taj Sunset Panorama x1,Nikhil Kapoor
+#1281,gaurav.shetty53@gmail.com,+91 94453 96336,2026-09-26 20:25:03 +0530,paid,999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_PXz7YAe4xTgRgG,0.00,Kolam Pattern Print x1,Gaurav Shetty
+#1282,pooja.desai2@outlook.com,+91 94743 97318,2026-09-27 08:54:38 +0530,paid,1999.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_F9GdMWdMrPV2R8,0.00,Jaipur Doors Collage x1,Pooja Desai
+#1283,meera.banerjee91@gmail.com,+91 95772 15035,2026-09-27 11:04:05 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Mandala Canvas 24x36 x1,Meera Banerjee
+#1284,kabir.pillai13@gmail.com,+91 95883 92111,2026-09-27 11:26:00 +0530,paid,2798.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_WscUsQPHVoPjxa,0.00,Warli Harvest Frame x1 | Kolam Pattern Print x1,Kabir Pillai
+#1285,swati.chopra66@gmail.com,+91 92647 81517,2026-09-27 11:31:11 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_Qm7SZWhARkzgM3,0.00,Taj Sunset Panorama x1,Swati Chopra
+#1286,harish.bhat39@yahoo.co.in,+91 96254 80570,2026-09-27 16:16:31 +0530,paid,3598.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_cxseCe7UzwuXAH,0.00,Warli Harvest Frame x1 | Warli Harvest Frame x1,Harish Bhat
+#1287,swati.shetty34@gmail.com,+91 99197 19151,2026-09-27 16:36:04 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1,Swati Shetty
+#1288,swati.malhotra12@outlook.com,+91 96580 22146,2026-09-27 17:04:59 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1,Swati Malhotra
+#1289,ritu.menon87@yahoo.co.in,+91 96597 06188,2026-09-28 08:28:37 +0530,paid,4498.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Taj Sunset Panorama x1 | Kolam Pattern Print x1,Ritu Menon
+#1290,nikhil.saxena30@gmail.com,+91 93763 73191,2026-09-28 08:55:33 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_K9ajHf8e7fzbHA,0.00,Madhubani Peacock Print x1,Nikhil Saxena
+#1291,harish.chopra26@yahoo.co.in,+91 95611 40459,2026-09-28 12:16:00 +0530,pending,1999.00,Cash on Delivery (COD),,0.00,Jaipur Doors Collage x1,Harish Chopra
+#1292,anjali.sharma33@outlook.com,+91 93768 25567,2026-09-28 13:24:54 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_CanUQAbx7zrWUN,0.00,Madhubani Peacock Print x1,Anjali Sharma
+#1293,nandini.kulkarni3@outlook.com,+91 92203 84313,2026-09-28 14:17:14 +0530,paid,2499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_z3X3iMtUkPvhbV,0.00,Mandala Canvas 24x36 x1,Nandini Kulkarni
+#1294,arjun.kapoor20@gmail.com,+91 98668 54621,2026-09-28 15:24:24 +0530,paid,3499.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_4AgNzBPRUWiuAa,0.00,Taj Sunset Panorama x1,Arjun Kapoor
+#1295,nikhil.banerjee18@yahoo.co.in,+91 90050 23150,2026-09-28 16:37:22 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_uFX7w5xvL5woto,0.00,Madhubani Peacock Print x1,Nikhil Banerjee
+#1296,suresh.chatterjee2@outlook.com,+91 97549 76895,2026-09-28 19:00:32 +0530,paid,2998.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",,0.00,Jaipur Doors Collage x1 | Kolam Pattern Print x1,Suresh Chatterjee
+#1297,nikhil.banerjee91@outlook.com,+91 94350 72263,2026-09-28 19:24:47 +0530,paid,1299.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_HmVAjUGjdzoNpe,0.00,Botanical Line Art Set x1,Nikhil Banerjee
+#1298,anjali.bose17@gmail.com,+91 90343 82261,2026-09-28 19:40:50 +0530,paid,4768.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_2AWKdn6wh3rxDN,0.00,Madhubani Peacock Print x1 | Taj Sunset Panorama x1,Anjali Bose
+#1299,priya.joshi16@yahoo.co.in,+91 90155 31538,2026-09-28 20:01:15 +0530,paid,1799.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_4CJFmKevxW7H5K,0.00,Warli Harvest Frame x1,Priya Joshi
+#1300,neha.kapoor14@outlook.com,+91 96572 47157,2026-09-28 20:38:00 +0530,paid,2519.00,"Razorpay Secure (UPI, Cards, Wallets, NetBanking)",pay_xFkQ2fcQWBR9ra,0.00,Buddha Meditation Canvas x1,Neha Kapoor
