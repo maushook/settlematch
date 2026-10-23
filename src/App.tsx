@@ -12,7 +12,7 @@ const SAMPLE_KEY = answerKeyJson as AnswerKey;
 const SAMPLE_AI = aiRunJson as AiRun | null;
 const USD_INR = 88; // display only, approximate
 // Set this to your public repo URL before deploying.
-const REPO_URL = '';
+const REPO_URL = 'https://github.com/maushook/settlematch';
 
 const inr = (n: number, dp = 0) =>
   `₹${n.toLocaleString('en-IN', { minimumFractionDigits: dp, maximumFractionDigits: dp })}`;
