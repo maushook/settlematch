@@ -1,7 +1,8 @@
-// Cloudflare Worker: serves the static app and one AI endpoint.
+// Cloudflare Worker: serves the static app and two AI endpoints.
 // The API key never reaches the browser. The endpoint is rate limited and
 // only accepts small, well-formed packets, so a public demo link can't be abused.
 import { callClaude, DEFAULT_MODEL, MAX_PACKETS } from '../src/engine/ai';
+import { polishDraft, validDraftInput } from '../src/engine/draft-ai';
 import type { AiPacket } from '../src/engine/types';
 
 interface Env {
@@ -25,7 +26,7 @@ function validPackets(x: unknown): x is AiPacket[] {
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    if (url.pathname !== '/api/resolve') return env.ASSETS.fetch(req);
+    if (url.pathname !== '/api/resolve' && url.pathname !== '/api/draft') return env.ASSETS.fetch(req);
     if (req.method !== 'POST') return json({ error: 'POST only' }, 405);
     if (!env.ANTHROPIC_API_KEY) return json({ error: 'AI is not configured on this deployment.' }, 503);
 
@@ -39,6 +40,18 @@ export default {
     if (text.length > 60_000) return json({ error: 'Payload too large' }, 413);
     let body: any;
     try { body = JSON.parse(text); } catch { return json({ error: 'Invalid JSON' }, 400); }
+
+    // POST /api/draft: polish one draft. The body is a single template built from one exception group.
+    if (url.pathname === '/api/draft') {
+      if (!validDraftInput(body?.draft)) return json({ error: 'Send one draft: audience, subject (up to 300 characters) and body (up to 6,000).' }, 400);
+      try {
+        const { audience, subject, body: text } = body.draft;
+        return json(await polishDraft({ audience, subject, body: text }, env.ANTHROPIC_API_KEY, env.AI_MODEL || DEFAULT_MODEL));
+      } catch (e) {
+        return json({ error: e instanceof Error ? e.message : 'AI call failed' }, 502);
+      }
+    }
+
     if (!validPackets(body?.packets)) return json({ error: `Send 1 to ${MAX_PACKETS} packets with up to 5 candidates each.` }, 400);
 
     try {

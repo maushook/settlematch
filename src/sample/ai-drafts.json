@@ -1,0 +1,439 @@
+{
+  "model": "claude-haiku-5-5",
+  "createdAt": "2026-10-23T19:23:52.998Z",
+  "costUsd": 0.0066427,
+  "drafts": {
+    "FEE_OVERCHARGE:group:gateway": {
+      "template": {
+        "subject": "Fees charged above our contract on 9 payments: ₹97.84 to credit",
+        "body": "Hello support team,\n\nThe fees on the 9 payments below are above our contracted rates. Rates are before GST on the fee; fees include it.\n\nPayment ID          Date        Method           Amount     Rate charged  Contract rate  Fee charged  Fee expected  Difference\n------------------  ----------  ---------------  ---------  ------------  -------------  -----------  ------------  ----------\npay_4KAhtmPZP96Tjq  2026-09-05  card mastercard  ₹1,619.00  2.36%         2%             ₹45.09       ₹38.21        ₹6.88\npay_gsgMidjd3kiEYR  2026-09-07  card visa        ₹899.00    2.36%         2%             ₹25.04       ₹21.22        ₹3.82\npay_6SJFTthNiXaKXg  2026-09-12  card visa        ₹2,799.00  2.36%         2%             ₹77.95       ₹66.06        ₹11.89\npay_EhMUtxbL5b88qh  2026-09-12  card mastercard  ₹4,298.00  2.36%         2%             ₹119.69      ₹101.43       ₹18.26\npay_rbFUDkwUZgVNFf  2026-09-12  card visa        ₹1,619.00  2.36%         2%             ₹45.09       ₹38.21        ₹6.88\npay_PQqUYZ2QUr4Rso  2026-09-18  card visa        ₹1,299.00  2.36%         2%             ₹36.18       ₹30.66        ₹5.52\npay_Xy3hySmwGkcauB  2026-09-19  card mastercard  ₹4,498.00  2.36%         2%             ₹125.26      ₹106.15       ₹19.11\npay_bT6FhYLi3FkKBf  2026-09-23  card mastercard  ₹3,499.00  2.36%         2%             ₹97.44       ₹82.58        ₹14.86\npay_X6nHdU2mzsu4LT  2026-09-25  card mastercard  ₹2,499.00  2.36%         2%             ₹69.60       ₹58.98        ₹10.62\n\nTotal charged above contract: ₹97.84\n\nMerchant ID: [merchant ID]\nOur contract: [contract or pricing reference]\n\nPlease check these payments and credit the difference to our next settlement.\n\nRegards,\n[your name]\n[business name]"
+      },
+      "result": {
+        "audience": "gateway",
+        "subject": "Fees charged above our contract on 9 payments: ₹97.84 to credit",
+        "body": "Hello support team,\n\nWe have found 9 payments where the fee charged is above our contracted rate. Our contracted rate is 2%, but the rate charged was 2.36%. The rates above are before GST on the fee, and the fees shown include GST.\n\nPlease review the payments listed below and credit the total difference of ₹97.84 to our next settlement.\n\nPayment ID          Date        Method           Amount     Rate charged  Contract rate  Fee charged  Fee expected  Difference\n------------------  ----------  ---------------  ---------  ------------  -------------  -----------  ------------  ----------\npay_4KAhtmPZP96Tjq  2026-09-05  card mastercard  ₹1,619.00  2.36%         2%             ₹45.09       ₹38.21        ₹6.88\npay_gsgMidjd3kiEYR  2026-09-07  card visa        ₹899.00    2.36%         2%             ₹25.04       ₹21.22        ₹3.82\npay_6SJFTthNiXaKXg  2026-09-12  card visa        ₹2,799.00  2.36%         2%             ₹77.95       ₹66.06        ₹11.89\npay_EhMUtxbL5b88qh  2026-09-12  card mastercard  ₹4,298.00  2.36%         2%             ₹119.69      ₹101.43       ₹18.26\npay_rbFUDkwUZgVNFf  2026-09-12  card visa        ₹1,619.00  2.36%         2%             ₹45.09       ₹38.21        ₹6.88\npay_PQqUYZ2QUr4Rso  2026-09-18  card visa        ₹1,299.00  2.36%         2%             ₹36.18       ₹30.66        ₹5.52\npay_Xy3hySmwGkcauB  2026-09-19  card mastercard  ₹4,498.00  2.36%         2%             ₹125.26      ₹106.15       ₹19.11\npay_bT6FhYLi3FkKBf  2026-09-23  card mastercard  ₹3,499.00  2.36%         2%             ₹97.44       ₹82.58        ₹14.86\npay_X6nHdU2mzsu4LT  2026-09-25  card mastercard  ₹2,499.00  2.36%         2%             ₹69.60       ₹58.98        ₹10.62\n\nTotal charged above contract: ₹97.84\n\nMerchant ID: [merchant ID]\nOur contract: [contract or pricing reference]\n\nPlease let us know if you need any further details from our side.\n\nRegards,\n[your name]\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1718,
+          "outputTokens": 978,
+          "costUsd": 0.0006607999999999999,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "PAYMENT_MISSING:#1011:ca": {
+      "template": {
+        "subject": "Order #1011 is marked paid with no payment",
+        "body": "Shopify shows order #1011 (2026-09-01, Sneha Malhotra) as paid for ₹2,499.00, but no gateway payment could be tied to it.\nIts payment reference pay_CrvXm6qRrEEjfP does not exist in the settlement report.\n\nAction: check whether the payment is on hold with the gateway or the order was marked paid by hand. If it is unpaid, collect payment from the customer or mark the order unpaid before it ships."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Order #1011 shows paid but no gateway payment found",
+        "body": "Hello,\n\nShopify shows order #1011 (dated 2026-09-01, customer Sneha Malhotra) as paid for ₹2,499.00. However, we could not tie any gateway payment to this order.\n\nPayment reference pay_CrvXm6qRrEEjfP does not appear in the settlement report.\n\nAction required:\n1. Check whether the payment is on hold with the payment gateway.\n2. Check whether the order was marked paid manually in Shopify.\n3. If the order is unpaid, either collect payment from the customer or mark the order as unpaid before it ships.\n\nPlease let us know the outcome of these checks.\n\nThank you.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1044,
+          "outputTokens": 302,
+          "costUsd": 0.00025540000000000003,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "PAYMENT_MISSING:#1043:ca": {
+      "template": {
+        "subject": "Order #1043 is marked paid with no payment",
+        "body": "Shopify shows order #1043 (2026-09-04, Ritu Chatterjee) as paid for ₹2,499.00, but no gateway payment could be tied to it.\n\nAction: check whether the payment is on hold with the gateway or the order was marked paid by hand. If it is unpaid, collect payment from the customer or mark the order unpaid before it ships."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Order #1043 marked paid with no matching gateway payment",
+        "body": "Hello,\n\nOrder #1043 is showing as paid in Shopify, but we could not find a gateway payment linked to it.\n\nOrder details:\n- Order number: #1043\n- Order date: 2026-09-04\n- Customer: Ritu Chatterjee\n- Amount shown as paid: ₹2,499.00\n- Gateway payment: not found\n\nRequested action:\n1. Check whether the payment is on hold with the gateway.\n2. Check whether the order was marked paid manually in Shopify.\n3. If the payment is not received, either collect payment from the customer or mark the order as unpaid before it ships.\n\nPlease let us know what you find so we can update the books accordingly.\n\nThank you.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1010,
+          "outputTokens": 315,
+          "costUsd": 0.0002585,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "PAYMENT_MISSING:#1055:ca": {
+      "template": {
+        "subject": "Order #1055 is marked paid with no payment",
+        "body": "Shopify shows order #1055 (2026-09-05, Ananya Banerjee) as paid for ₹2,499.00, but no gateway payment could be tied to it.\nIts payment reference pay_mi4M7rXXHbLcou does not exist in the settlement report.\n\nAction: check whether the payment is on hold with the gateway or the order was marked paid by hand. If it is unpaid, collect payment from the customer or mark the order unpaid before it ships."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Order #1055 marked paid, no matching gateway payment",
+        "body": "Hi,\n\nShopify shows order #1055 as paid for ₹2,499.00. The order date is 2026-09-05 and the customer is Ananya Banerjee.\n\nNo gateway payment could be matched to this order. The payment reference pay_mi4M7rXXHbLcou does not appear in the settlement report.\n\nAction needed:\n1. Check whether the payment is on hold with the gateway.\n2. Check whether the order was marked paid manually in Shopify.\n3. If the order is unpaid, either collect payment from the customer or mark the order unpaid before it ships.\n\nPlease let me know what you find so we can reconcile the books.\n\nThanks",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1043,
+          "outputTokens": 304,
+          "costUsd": 0.0002563,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "PAYMENT_MISSING:#1067:ca": {
+      "template": {
+        "subject": "Order #1067 is marked paid with no payment",
+        "body": "Shopify shows order #1067 (2026-09-06, Nikhil Verma) as paid for ₹1,999.00, but no gateway payment could be tied to it.\nIts payment reference pay_eoUxAuAXcYNtCG does not exist in the settlement report.\n\nAction: check whether the payment is on hold with the gateway or the order was marked paid by hand. If it is unpaid, collect payment from the customer or mark the order unpaid before it ships."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Order #1067 marked paid with no matching gateway payment",
+        "body": "Hello,\n\nPlease review the following order, where the payment status and the gateway records do not match.\n\nOrder details:\n- Order number: #1067\n- Order date: 2026-09-06\n- Customer: Nikhil Verma\n- Amount shown as paid in Shopify: ₹1,999.00\n- Payment reference: pay_eoUxAuAXcYNtCG\n\nIssue:\nShopify shows order #1067 as paid, but no gateway payment could be matched to it. The payment reference pay_eoUxAuAXcYNtCG does not appear in the settlement report.\n\nRequested action:\n1. Check whether the payment is on hold with the gateway.\n2. Check whether the order was marked paid manually in Shopify.\n3. If the payment was not received, either collect payment from the customer or mark the order unpaid before it ships.\n\nPlease let us know the outcome of these checks so we can record the correct position in the books.\n\nThank you.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1043,
+          "outputTokens": 393,
+          "costUsd": 0.0003008,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "AMOUNT_MISMATCH:pay_YVb3aXbyKmEhUK:ca": {
+      "template": {
+        "subject": "Order #1014 collected less than its total",
+        "body": "Order #1014 totals ₹2,298.00, but payment pay_YVb3aXbyKmEhUK on 2026-09-02 captured ₹2,098.00. The difference is ₹200.00.\n\nAction: check whether a discount or edit was applied on one side only. Correct the order, or book the difference as a discount."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Order #1014 collected less than its total",
+        "body": "Hello,\n\nOrder #1014 totals ₹2,298.00, but payment pay_YVb3aXbyKmEhUK on 2026-09-02 captured ₹2,098.00. The difference is ₹200.00.\n\nAction required:\n1. Check whether a discount or edit was applied on one side only (the order or the payment).\n2. Either correct the order, or book the ₹200.00 difference as a discount.\n\nPlease let us know which treatment you recommend before we post the entry.\n\nThank you.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 994,
+          "outputTokens": 247,
+          "costUsd": 0.0002229,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "AMOUNT_MISMATCH:pay_XuAcuGRrBuqhAU:ca": {
+      "template": {
+        "subject": "Order #1136 collected less than its total",
+        "body": "Order #1136 totals ₹1,799.00, but payment pay_XuAcuGRrBuqhAU on 2026-09-12 captured ₹1,599.00. The difference is ₹200.00.\n\nAction: check whether a discount or edit was applied on one side only. Correct the order, or book the difference as a discount."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Order #1136 collected less than its total",
+        "body": "Hi,\n\nOrder #1136 totals ₹1,799.00, but payment pay_XuAcuGRrBuqhAU on 2026-09-12 captured ₹1,599.00. The difference is ₹200.00.\n\nAction required:\n1. Check whether a discount or edit was applied to the order on one side only (order record or payment record).\n2. Based on the finding, either correct the order so it matches the captured amount, or book the ₹200.00 difference as a discount.\n\nPlease confirm which treatment you recommend once checked.\n\nThanks",
+        "polished": true,
+        "usage": {
+          "inputTokens": 994,
+          "outputTokens": 261,
+          "costUsd": 0.0002299,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "DUPLICATE_PAYMENT:pay_es5XkZBesMwxnZ:customer": {
+      "template": {
+        "subject": "Refund for the extra payment on order #1015",
+        "body": "Hi Manoj,\n\nYou were charged twice for order #1015. We are refunding the extra payment of ₹3,499.00 to the original payment method. Banks usually take [refund timeline] to show it.\n\nSorry for the trouble. Reply to this message if you have any questions.\n\nThanks,\n[business name]"
+      },
+      "result": {
+        "audience": "customer",
+        "subject": "Refund for the extra payment on order #1015",
+        "body": "Hi Manoj,\n\nWe noticed you were charged twice for order #1015. We are refunding the extra payment of ₹3,499.00 to your original payment method. Banks usually take [refund timeline] to show the refund.\n\nWe're sorry for the trouble. If you have any questions, just reply to this message.\n\nThanks,\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 991,
+          "outputTokens": 197,
+          "costUsd": 0.00019760000000000003,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "DUPLICATE_PAYMENT:pay_es5XkZBesMwxnZ:internal": {
+      "template": {
+        "subject": "Refund duplicate payment pay_es5XkZBesMwxnZ on #1015",
+        "body": "Order #1015 (total ₹3,499.00) was paid twice:\n- Keep: pay_bKfoC6DPcFpRpA (2026-09-02)\n- Refund: pay_es5XkZBesMwxnZ (2026-09-02), 5 min later, ₹3,499.00\n\nSteps:\n1. In the gateway dashboard, issue a full refund of ₹3,499.00 on pay_es5XkZBesMwxnZ.\n2. Note the refund ID on order #1015 in Shopify. Do not change the order total.\n3. Send the customer message to manoj.sharma63@yahoo.co.in."
+      },
+      "result": {
+        "audience": "internal",
+        "subject": "Refund duplicate payment pay_es5XkZBesMwxnZ on #1015",
+        "body": "Order #1015 (total ₹3,499.00) was paid twice.\n\nPayments:\n- Keep: pay_bKfoC6DPcFpRpA (2026-09-02)\n- Refund: pay_es5XkZBesMwxnZ (2026-09-02), 5 minutes later, ₹3,499.00\n\nSteps:\n1. In the gateway dashboard, issue a full refund of ₹3,499.00 on pay_es5XkZBesMwxnZ.\n2. Note the refund ID on order #1015 in Shopify. Do not change the order total.\n3. Send the customer message to manoj.sharma63@yahoo.co.in.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1114,
+          "outputTokens": 319,
+          "costUsd": 0.00027089999999999997,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "DUPLICATE_PAYMENT:pay_auKiyHdv7MQ6XD:customer": {
+      "template": {
+        "subject": "Refund for the extra payment on order #1206",
+        "body": "Hi Priya,\n\nYou were charged twice for order #1206. We are refunding the extra payment of ₹3,149.00 to the original payment method. Banks usually take [refund timeline] to show it.\n\nSorry for the trouble. Reply to this message if you have any questions.\n\nThanks,\n[business name]"
+      },
+      "result": {
+        "audience": "customer",
+        "subject": "Refund for the extra payment on order #1206",
+        "body": "Hi Priya,\n\nWe noticed you were charged twice for order #1206. We are refunding the extra payment of ₹3,149.00 to your original payment method. Banks usually take [refund timeline] to show the refund.\n\nWe are sorry for the trouble. If you have any questions, just reply to this message.\n\nThanks,\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 990,
+          "outputTokens": 196,
+          "costUsd": 0.000197,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "DUPLICATE_PAYMENT:pay_auKiyHdv7MQ6XD:internal": {
+      "template": {
+        "subject": "Refund duplicate payment pay_auKiyHdv7MQ6XD on #1206",
+        "body": "Order #1206 (total ₹3,149.00) was paid twice:\n- Keep: pay_gbEosM53xmDNq8 (2026-09-20)\n- Refund: pay_auKiyHdv7MQ6XD (2026-09-20), 9 min later, ₹3,149.00\n\nSteps:\n1. In the gateway dashboard, issue a full refund of ₹3,149.00 on pay_auKiyHdv7MQ6XD.\n2. Note the refund ID on order #1206 in Shopify. Do not change the order total.\n3. Send the customer message to priya.bose42@yahoo.co.in."
+      },
+      "result": {
+        "audience": "internal",
+        "subject": "Refund duplicate payment pay_auKiyHdv7MQ6XD on #1206",
+        "body": "Order #1206 (total ₹3,149.00) was paid twice.\n- Keep: pay_gbEosM53xmDNq8 (2026-09-20)\n- Refund: pay_auKiyHdv7MQ6XD (2026-09-20), 9 min later, ₹3,149.00\n\nSteps:\n1. In the gateway dashboard, issue a full refund of ₹3,149.00 on pay_auKiyHdv7MQ6XD.\n2. Note the refund ID on order #1206 in Shopify. Do not change the order total.\n3. Send the customer message to priya.bose42@yahoo.co.in.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1114,
+          "outputTokens": 312,
+          "costUsd": 0.0002674,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "UNMATCHED_PAYMENT:pay_FVFzMkcv8VpbJ6:ca": {
+      "template": {
+        "subject": "Payment pay_FVFzMkcv8VpbJ6 has no order",
+        "body": "₹2,499.00 was received on 2026-09-05 (payment pay_FVFzMkcv8VpbJ6, upi) and could not be tied to an order.\nPayer: tanvi.chopra40@gmail.com. Notes: \"gol design wali badi painting - gift for didi\".\n\nAction: find the order this payment belongs to and link it. If there is none, refund the payer."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Payment pay_FVFzMkcv8VpbJ6 has no order: please help reconcile",
+        "body": "Hello,\n\nA payment could not be matched to an order. Please review the details below.\n\nPayment details\n- Payment ID: pay_FVFzMkcv8VpbJ6\n- Amount: ₹2,499.00\n- Date received: 2026-09-05\n- Payment method: UPI\n- Payer email: tanvi.chopra40@gmail.com\n- Payer note: \"gol design wali badi painting - gift for didi\"\n\nAction required\n1. Search the order records for an order that matches this payment (amount, date, payer email and payer note).\n2. If a matching order is found, link payment pay_FVFzMkcv8VpbJ6 to that order and confirm the link in writing.\n3. If no matching order is found, refund ₹2,499.00 to the payer and share the refund reference with us.\n\nPlease let us know the outcome once the above is done.\n\nThank you.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1027,
+          "outputTokens": 384,
+          "costUsd": 0.0002947,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "REFUND_NOT_IN_GATEWAY:#1202:customer": {
+      "template": {
+        "subject": "Your refund for order #1202",
+        "body": "Hi Tanvi,\n\nOur records show a refund of ₹2,799.00 for order #1202, but it was not sent to you. We are sending it now to the original payment method. Banks usually take [refund timeline] to show it.\n\nSorry for the delay. Reply to this message if you have any questions.\n\nThanks,\n[business name]"
+      },
+      "result": {
+        "audience": "customer",
+        "subject": "Your refund for order #1202",
+        "body": "Hi Tanvi,\n\nThank you for your patience. We found that your refund of ₹2,799.00 for order #1202 was not sent to you earlier. We are sending it now to your original payment method. Banks usually take [refund timeline] to show it.\n\nWe are sorry for the delay. If you have any questions, just reply to this message.\n\nThanks,\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 992,
+          "outputTokens": 201,
+          "costUsd": 0.00019969999999999998,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "REFUND_NOT_IN_GATEWAY:#1202:internal": {
+      "template": {
+        "subject": "Send the missing refund on #1202",
+        "body": "Shopify shows ₹2,799.00 refunded on order #1202, but the gateway processed no refund.\n\nSteps:\n1. In the gateway dashboard, refund ₹2,799.00 on payment pay_CFfnD5Tyu6g4sz.\n2. Add the refund ID to order #1202 in Shopify.\n3. Send the customer message to tanvi.sharma94@yahoo.co.in."
+      },
+      "result": {
+        "audience": "internal",
+        "subject": "Send the missing refund on #1202",
+        "body": "Shopify shows ₹2,799.00 refunded on order #1202, but the payment gateway has processed no refund for it.\n\nSteps:\n1. In the gateway dashboard, refund ₹2,799.00 on payment pay_CFfnD5Tyu6g4sz.\n2. Add the refund ID to order #1202 in Shopify.\n3. Send the customer message to tanvi.sharma94@yahoo.co.in.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1025,
+          "outputTokens": 228,
+          "costUsd": 0.0002165,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "REFUND_NOT_IN_GATEWAY:#1207:customer": {
+      "template": {
+        "subject": "Your refund for order #1207",
+        "body": "Hi Suresh,\n\nOur records show a refund of ₹1,799.00 for order #1207, but it was not sent to you. We are sending it now to the original payment method. Banks usually take [refund timeline] to show it.\n\nSorry for the delay. Reply to this message if you have any questions.\n\nThanks,\n[business name]"
+      },
+      "result": {
+        "audience": "customer",
+        "subject": "Your refund for order #1207",
+        "body": "Hi Suresh,\n\nThank you for your patience. Our records show a refund of ₹1,799.00 for order #1207 that was not sent to you earlier. We are sending it now to your original payment method. Banks usually take [refund timeline] to show it.\n\nWe are sorry for the delay. If you have any questions, just reply to this message and we will be happy to help.\n\nThanks,\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 991,
+          "outputTokens": 210,
+          "costUsd": 0.00020410000000000003,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "REFUND_NOT_IN_GATEWAY:#1207:internal": {
+      "template": {
+        "subject": "Send the missing refund on #1207",
+        "body": "Shopify shows ₹1,799.00 refunded on order #1207, but the gateway processed no refund.\n\nSteps:\n1. In the gateway dashboard, refund ₹1,799.00 on payment pay_RFQVMhe5RwwafW.\n2. Add the refund ID to order #1207 in Shopify.\n3. Send the customer message to suresh.sharma12@gmail.com."
+      },
+      "result": {
+        "audience": "internal",
+        "subject": "Send the missing refund on #1207",
+        "body": "Shopify shows ₹1,799.00 refunded on order #1207, but the payment gateway has processed no refund for it.\n\nSteps:\n1. In the gateway dashboard, refund ₹1,799.00 on payment pay_RFQVMhe5RwwafW.\n2. Add the refund ID to order #1207 in Shopify.\n3. Send the customer message to suresh.sharma12@gmail.com.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1019,
+          "outputTokens": 222,
+          "costUsd": 0.0002129,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "REFUND_NOT_IN_GATEWAY:#1238:customer": {
+      "template": {
+        "subject": "Your refund for order #1238",
+        "body": "Hi Rohan,\n\nOur records show a refund of ₹3,098.00 for order #1238, but it was not sent to you. We are sending it now to the original payment method. Banks usually take [refund timeline] to show it.\n\nSorry for the delay. Reply to this message if you have any questions.\n\nThanks,\n[business name]"
+      },
+      "result": {
+        "audience": "customer",
+        "subject": "Your refund for order #1238",
+        "body": "Hi Rohan,\n\nWe're sorry, our records show that your refund of ₹3,098.00 for order #1238 was not sent to you earlier. We are sending it now to your original payment method. Banks usually take [refund timeline] to show it.\n\nThank you for your patience. If you have any questions, just reply to this message.\n\nWarm regards,\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 991,
+          "outputTokens": 198,
+          "costUsd": 0.00019810000000000002,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "REFUND_NOT_IN_GATEWAY:#1238:internal": {
+      "template": {
+        "subject": "Send the missing refund on #1238",
+        "body": "Shopify shows ₹3,098.00 refunded on order #1238, but the gateway processed no refund.\n\nSteps:\n1. In the gateway dashboard, refund ₹3,098.00 on payment pay_go6b5xniQFyJCn.\n2. Add the refund ID to order #1238 in Shopify.\n3. Send the customer message to rohan.banerjee27@gmail.com."
+      },
+      "result": {
+        "audience": "internal",
+        "subject": "Send the missing refund on #1238",
+        "body": "Shopify shows ₹3,098.00 refunded on order #1238, but the payment gateway has not processed any refund for it.\n\nSteps:\n1. In the gateway dashboard, refund ₹3,098.00 on payment pay_go6b5xniQFyJCn.\n2. Add the refund ID to order #1238 in Shopify.\n3. Send the customer message to rohan.banerjee27@gmail.com.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1019,
+          "outputTokens": 223,
+          "costUsd": 0.0002134,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "UNRECORDED_REFUND:rfnd_7MD3mn8HaMQ4LW:ca": {
+      "template": {
+        "subject": "Refund rfnd_7MD3mn8HaMQ4LW on #1254 is not in Shopify",
+        "body": "The gateway refunded ₹2,499.00 on 2026-09-26 (refund rfnd_7MD3mn8HaMQ4LW, payment pay_CTBGzASaQzokSb) for order #1254. It was deducted in settlement setl_pVGvxM4fiq8T4j.\nShopify shows no refund on this order, so ₹2,499.00 of revenue is overstated in the books.\n\nAction: record the refund in Shopify, or book a credit note for the same amount."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Refund rfnd_7MD3mn8HaMQ4LW on order #1254 not recorded in Shopify",
+        "body": "Hi,\n\nA refund on order #1254 is not recorded in Shopify, so revenue for this order is overstated in the books by ₹2,499.00.\n\nDetails:\n- Order number: #1254\n- Refund ID: rfnd_7MD3mn8HaMQ4LW\n- Payment ID: pay_CTBGzASaQzokSb\n- Refund amount: ₹2,499.00\n- Refund date: 2026-09-26\n- Settlement ID: setl_pVGvxM4fiq8T4j (refund deducted in this settlement)\n- Shopify status: no refund recorded on this order\n\nAction required:\n1. Record the refund of ₹2,499.00 against order #1254 in Shopify, or\n2. Book a credit note for ₹2,499.00 for the same order.\n\nPlease confirm which option you have applied so the books can be reconciled.\n\nThank you.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1074,
+          "outputTokens": 399,
+          "costUsd": 0.0003069,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "UNRECORDED_REFUND:rfnd_mXEdZvEwUFviTt:ca": {
+      "template": {
+        "subject": "Refund rfnd_mXEdZvEwUFviTt on #1280 is not in Shopify",
+        "body": "The gateway refunded ₹3,499.00 on 2026-09-26 (refund rfnd_mXEdZvEwUFviTt, payment pay_RDoUhxpVvDNg9o) for order #1280. It was deducted in settlement setl_pVGvxM4fiq8T4j.\nShopify shows no refund on this order, so ₹3,499.00 of revenue is overstated in the books.\n\nAction: record the refund in Shopify, or book a credit note for the same amount."
+      },
+      "result": {
+        "audience": "ca",
+        "subject": "Unrecorded refund rfnd_mXEdZvEwUFviTt on order #1280 (₹3,499.00)",
+        "body": "Hi,\n\nA refund has been processed through our payment gateway but does not appear in Shopify. Please review and record it in the books.\n\nRefund details:\n- Order number: #1280\n- Refund ID: rfnd_mXEdZvEwUFviTt\n- Payment ID: pay_RDoUhxpVvDNg9o\n- Refund amount: ₹3,499.00\n- Refund date: 2026-09-26\n- Settlement ID: setl_pVGvxM4fiq8T4j (refund deducted in this settlement)\n\nIssue:\nShopify shows no refund against this order, so revenue for order #1280 is overstated by ₹3,499.00 in the books.\n\nRequested action:\nEither record the refund in Shopify, or book a credit note for ₹3,499.00 against order #1280.\n\nPlease confirm which treatment you have applied once it is done.\n\nThank you.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1072,
+          "outputTokens": 430,
+          "costUsd": 0.00032219999999999997,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "CHARGEBACK:adj_Hmfcb8kUq59GqL:internal": {
+      "template": {
+        "subject": "Evidence for dispute disp_6E9NiwgZnvsfiA on order #1237",
+        "body": "₹1,799.00 was debited on 2026-09-26 from settlement setl_pVGvxM4fiq8T4j for dispute disp_6E9NiwgZnvsfiA.\nPayment: pay_mVQG8Vo72AiF3F. Order: #1237. Gateway adjustment: adj_Hmfcb8kUq59GqL.\nRespond by: [dispute response deadline]\n\nCollect and upload:\n[ ] Invoice for order #1237\n[ ] Proof of delivery: courier name, AWB [AWB number], delivery date and signature or photo\n[ ] Order confirmation and shipping emails or messages sent to the customer\n[ ] Any messages from the customer after delivery\n[ ] Product page or photos showing what was sold\n[ ] Refund and return policy shown at checkout\n[ ] Payment details: pay_mVQG8Vo72AiF3F, ₹1,799.00\n\nIf the claim is valid and you would rather refund, accept the dispute instead of refunding separately, so the customer is not paid twice."
+      },
+      "result": {
+        "audience": "internal",
+        "subject": "Evidence for dispute disp_6E9NiwgZnvsfiA on order #1237",
+        "body": "Dispute disp_6E9NiwgZnvsfiA on order #1237\n\nSummary:\n1. ₹1,799.00 was debited on 2026-09-26 from settlement setl_pVGvxM4fiq8T4j for this dispute.\n2. Payment: pay_mVQG8Vo72AiF3F. Order: #1237. Gateway adjustment: adj_Hmfcb8kUq59GqL.\n3. Respond by: [dispute response deadline]\n\nSteps:\n1. Collect the following documents for order #1237:\n   [ ] Invoice for order #1237\n   [ ] Proof of delivery: courier name, AWB [AWB number], delivery date and signature or photo\n   [ ] Order confirmation and shipping emails or messages sent to the customer\n   [ ] Any messages from the customer after delivery\n   [ ] Product page or photos showing what was sold\n   [ ] Refund and return policy shown at checkout\n   [ ] Payment details: pay_mVQG8Vo72AiF3F, ₹1,799.00\n2. Upload all documents to the dispute before the response deadline above.\n3. Decision check: if the claim is valid and you would rather refund the customer, accept the dispute instead of refunding separately. This prevents the customer from being paid twice.",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1256,
+          "outputTokens": 532,
+          "costUsd": 0.00039160000000000003,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "BANK_SHORT_CREDIT:setl_gceSd3QTgguNdG:gateway": {
+      "template": {
+        "subject": "Settlement setl_gceSd3QTgguNdG credited short by ₹1,250.00",
+        "body": "Hello support team,\n\nSettlement setl_gceSd3QTgguNdG (UTR YESBN36500360828, settled on 2026-09-10) is ₹44,776.43 in the settlement report, but our bank credited ₹43,526.43 on 2026-09-10 (bank reference S19404953). The difference is ₹1,250.00.\n\nDetails:\n- Merchant ID: [merchant ID]\n- Settlement ID: setl_gceSd3QTgguNdG\n- UTR: YESBN36500360828\n- Settled amount: ₹44,776.43\n- Amount credited: ₹43,526.43\n- Difference: ₹1,250.00\n\nPlease share the breakdown of any deduction from this settlement, or transfer the balance.\n\nRegards,\n[your name]\n[business name]"
+      },
+      "result": {
+        "audience": "gateway",
+        "subject": "Settlement setl_gceSd3QTgguNdG credited short by ₹1,250.00",
+        "body": "Hello Support Team,\n\nWe are writing about a short credit on settlement setl_gceSd3QTgguNdG. The settlement report shows ₹44,776.43, but our bank received ₹43,526.43 on 2026-09-10, leaving a difference of ₹1,250.00.\n\nSettlement details:\n- Merchant ID: [merchant ID]\n- Settlement ID: setl_gceSd3QTgguNdG\n- UTR: YESBN36500360828\n- Settled date: 2026-09-10\n- Settled amount (per settlement report): ₹44,776.43\n- Amount credited to our bank: ₹43,526.43\n- Bank reference: S19404953\n- Difference: ₹1,250.00\n\nCould you please share a breakdown of any deduction made from this settlement? If the difference is not a valid deduction, we request that the balance of ₹1,250.00 be transferred to our account.\n\nThank you for your help. Please let us know if you need any further information.\n\nRegards,\n[your name]\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1170,
+          "outputTokens": 439,
+          "costUsd": 0.0003365,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "SETTLEMENT_NOT_IN_BANK:setl_ZM6Q2Mh6YoMmgn:gateway": {
+      "template": {
+        "subject": "Settlement setl_ZM6Q2Mh6YoMmgn not received in our bank account",
+        "body": "Hello support team,\n\nSettlement setl_ZM6Q2Mh6YoMmgn for ₹6,832.84 shows as settled on 2026-09-17 with UTR YESBN19288488322, but it has not been credited to our bank account. Our bank statement up to 2026-09-30 has no matching credit.\n\nDetails:\n- Merchant ID: [merchant ID]\n- Settlement ID: setl_ZM6Q2Mh6YoMmgn\n- UTR: YESBN19288488322\n- Settled on: 2026-09-17\n- Net amount: ₹6,832.84\n- Transactions in the settlement: 2\n- Bank account: [bank account, last 4 digits]\n\nPlease confirm the transfer status and share the bank reference, or re-initiate the transfer.\n\nRegards,\n[your name]\n[business name]"
+      },
+      "result": {
+        "audience": "gateway",
+        "subject": "Settlement setl_ZM6Q2Mh6YoMmgn not received in our bank account",
+        "body": "Hello support team,\n\nSettlement setl_ZM6Q2Mh6YoMmgn for ₹6,832.84 shows as settled on 2026-09-17 with UTR YESBN19288488322. However, the amount has not been credited to our bank account. Our bank statement up to 2026-09-30 shows no matching credit.\n\nSettlement details:\n- Merchant ID: [merchant ID]\n- Settlement ID: setl_ZM6Q2Mh6YoMmgn\n- UTR: YESBN19288488322\n- Settled on: 2026-09-17\n- Net amount: ₹6,832.84\n- Transactions in the settlement: 2\n- Bank account: [bank account, last 4 digits]\n\nCould you please confirm the transfer status and share the bank reference for this UTR? If the transfer did not go through, kindly re-initiate it.\n\nThank you for your help.\n\nRegards,\n[your name]\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1183,
+          "outputTokens": 413,
+          "costUsd": 0.00032480000000000003,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    },
+    "UNKNOWN_GATEWAY_CREDIT:S19430445:gateway": {
+      "template": {
+        "subject": "Bank credit of ₹4,318.62 on 2026-09-17 with no settlement record",
+        "body": "Hello support team,\n\nWe received ₹4,318.62 from you on 2026-09-17 (bank reference S19430445), but it matches no settlement in our settlement report for [report period].\n\nBank narration: \"NEFT CR-YESB0000001-RAZORPAY SOFTWARE PRIVATE LIMITED-KALAKRITI HOME-YESBN68845748692\"\n\nDetails:\n- Merchant ID: [merchant ID]\n- Amount: ₹4,318.62\n- Date credited: 2026-09-17\n\nPlease tell us which settlement this credit belongs to and share its settlement ID and transaction list.\n\nRegards,\n[your name]\n[business name]"
+      },
+      "result": {
+        "audience": "gateway",
+        "subject": "Unmatched bank credit of ₹4,318.62 credited on 2026-09-17, no matching settlement record",
+        "body": "Hello support team,\n\nWe received a bank credit of ₹4,318.62 from you on 2026-09-17. The bank reference is S19430445. This amount does not match any settlement in our settlement report for [report period].\n\nBank narration:\n\"NEFT CR-YESB0000001-RAZORPAY SOFTWARE PRIVATE LIMITED-KALAKRITI HOME-YESBN68845748692\"\n\nDetails:\n- Merchant ID: [merchant ID]\n- Amount: ₹4,318.62\n- Date credited: 2026-09-17\n- Bank reference: S19430445\n\nCould you please confirm which settlement this credit belongs to? We would also be grateful if you could share the settlement ID and the transaction list for that settlement.\n\nThank you for your help.\n\nRegards,\n[your name]\n[business name]",
+        "polished": true,
+        "usage": {
+          "inputTokens": 1128,
+          "outputTokens": 382,
+          "costUsd": 0.0003038,
+          "model": "claude-haiku-5-5"
+        }
+      }
+    }
+  }
+}

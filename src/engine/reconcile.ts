@@ -148,6 +148,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
       const actualRate = p.amount ? r2(((p.fee - p.tax) / p.amount) * 100) : 0;
       feeIssues.push({
         type: 'FEE_OVERCHARGE', key: p.entityId, severity: 'loss', amount: over,
+        facts: { paymentId: p.entityId, paymentDate: p.createdAt.slice(0, 10), method: p.method, cardNetwork: p.cardNetwork, paymentAmount: p.amount, feeCharged: p.fee, feeExpected: e.fee, rateCharged: actualRate, rateContract: e.rate, overcharge: over },
         title: 'Gateway fee above contract',
         explanation: `Charged ${actualRate}% on a ${p.method}${p.cardNetwork ? ` (${p.cardNetwork})` : ''} payment; contract is ${e.rate}%. Overcharged ${inr(over)} including GST on fee.`,
         evidence: [`amount ${inr(p.amount)}`, `fee charged ${inr(p.fee)}`, `fee expected ${inr(e.fee)}`],
@@ -291,6 +292,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
     if (!ps.length) {
       ex.push({
         type: 'PAYMENT_MISSING', key: o.id, severity: 'loss', amount: o.total,
+        facts: { orderId: o.id, orderDate: o.createdAt.slice(0, 10), orderTotal: o.total, customer: o.customerName, email: o.email, financialStatus: o.financialStatus || 'paid', paymentReference: o.paymentReference },
         title: 'Order marked paid, no payment in gateway',
         explanation: `Shopify shows ${o.id} as ${o.financialStatus || 'paid'} for ${inr(o.total)}, but no gateway payment could be tied to it.${o.paymentReference ? ` Its payment reference ${o.paymentReference} does not exist in the settlement report.` : ''} Check if the payment is on hold or the order was marked paid manually.`,
         evidence: [`order date ${o.createdAt.slice(0, 10)}`, `customer ${o.customerName || o.email}`],
@@ -302,6 +304,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
       for (const dup of ps.slice(1)) {
         ex.push({
           type: 'DUPLICATE_PAYMENT', key: dup.entityId, severity: 'liability', amount: dup.amount,
+          facts: { orderId: o.id, orderTotal: o.total, customer: o.customerName, email: o.email, firstPaymentId: ps[0].entityId, firstPaymentDate: ps[0].createdAt.slice(0, 10), duplicatePaymentId: dup.entityId, duplicatePaymentDate: dup.createdAt.slice(0, 10), duplicateAmount: dup.amount, minutesApart: Math.round((dup.ts - ps[0].ts) / 60000), collected: sum },
           title: 'Customer charged twice',
           explanation: `${o.id} was paid by ${ps[0].entityId} and again by ${dup.entityId} ${Math.round((dup.ts - ps[0].ts) / 60000)} min later. Refund ${inr(dup.amount)} to the customer.`,
           evidence: [`order total ${inr(o.total)}`, `collected ${inr(sum)}`],
@@ -311,6 +314,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
       const diff = r2(o.total - ps[0].amount);
       ex.push({
         type: 'AMOUNT_MISMATCH', key: ps[0].entityId, severity: diff > 0 ? 'loss' : 'review', amount: Math.abs(diff),
+        facts: { orderId: o.id, orderTotal: o.total, paymentId: ps[0].entityId, paymentDate: ps[0].createdAt.slice(0, 10), captured: ps[0].amount, difference: Math.abs(diff), direction: diff > 0 ? 'less' : 'more' },
         title: diff > 0 ? 'Collected less than order total' : 'Collected more than order total',
         explanation: `${o.id} totals ${inr(o.total)} but the gateway captured ${inr(ps[0].amount)}. A coupon or edit was likely applied on one side only.`,
         evidence: [`payment ${ps[0].entityId}`],
@@ -322,6 +326,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
     if (pLinks.has(p.entityId)) continue;
     ex.push({
       type: 'UNMATCHED_PAYMENT', key: p.entityId, severity: 'review', amount: p.amount,
+      facts: { paymentId: p.entityId, paymentDate: p.createdAt.slice(0, 10), amount: p.amount, method: p.method, payer: p.email || p.contact, notes: p.notes },
       title: 'Payment with no order',
       explanation: `${inr(p.amount)} received on ${p.createdAt.slice(0, 10)} could not be tied to any order${p.notes ? `. Notes say: "${p.notes}"` : ''}.`,
       evidence: [p.email || p.contact ? `payer ${p.email || p.contact}` : 'no payer details', `method ${p.method}`],
@@ -342,6 +347,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
     if (o.refundedAmount > gw + 1) {
       ex.push({
         type: 'REFUND_NOT_IN_GATEWAY', key: o.id, severity: 'liability', amount: r2(o.refundedAmount - gw),
+        facts: { orderId: o.id, orderTotal: o.total, customer: o.customerName, email: o.email, refundedInShopify: o.refundedAmount, refundedInGateway: gw, refundDue: r2(o.refundedAmount - gw), paymentId: (paymentsByOrder.get(o.id) ?? [])[0]?.entityId ?? '' },
         title: 'Refund promised, never sent',
         explanation: `Shopify shows ${inr(o.refundedAmount)} refunded on ${o.id}, but the gateway processed ${gw ? inr(gw) : 'no refund'}. The customer may still be waiting for their money.`,
         evidence: [`order status ${o.financialStatus}`],
@@ -350,6 +356,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
       for (const r of o.refundedAmount <= 0.5 ? rs : rs.slice(-1)) {
         ex.push({
           type: 'UNRECORDED_REFUND', key: r.entityId, severity: 'review',
+          facts: { refundId: r.entityId, refundDate: r.createdAt.slice(0, 10), refundAmount: r.amount, orderId: o.id, paymentId: r.paymentId, settlementId: r.settlementId, refundedInShopify: o.refundedAmount, unrecorded: o.refundedAmount <= 0.5 ? r.amount : r2(gw - o.refundedAmount) },
           amount: o.refundedAmount <= 0.5 ? r.amount : r2(gw - o.refundedAmount),
           title: 'Refund not recorded in Shopify',
           explanation: `${inr(r.amount)} was refunded through the gateway on ${r.createdAt.slice(0, 10)} for ${o.id}, but Shopify shows ${o.refundedAmount ? inr(o.refundedAmount) : 'no refund'}. Revenue in your books is overstated.`,
@@ -363,6 +370,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
     const l = pLinks.get(a.paymentId);
     ex.push({
       type: 'CHARGEBACK', key: a.entityId, severity: 'loss', amount: a.debit || a.amount,
+      facts: { adjustmentId: a.entityId, debitDate: a.createdAt.slice(0, 10), amount: a.debit || a.amount, paymentId: a.paymentId, orderId: l?.orderId ?? '', settlementId: a.settlementId, disputeId: a.description.match(/disp_[A-Za-z0-9]+/)?.[0] ?? '', description: a.description },
       title: 'Chargeback deducted from settlement',
       explanation: `${inr(a.debit || a.amount)} was debited${l ? ` for ${l.orderId}` : ''}${a.description ? ` (${a.description})` : ''}. Submit delivery proof to contest it.`,
       evidence: [`payment ${a.paymentId}`, `deducted in ${a.settlementId}`],
@@ -377,6 +385,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
       if (s.ts > bankEnd) continue; // still in transit after statement end
       ex.push({
         type: 'SETTLEMENT_NOT_IN_BANK', key: s.id, severity: 'loss', amount: s.net,
+        facts: { settlementId: s.id, utr: s.utr, settledOn: s.settledAt.slice(0, 10), net: s.net, credits: s.credits, debits: s.debits, transactions: s.txnIds.length, statementEnd: new Date(bankEnd).toISOString().slice(0, 10) },
         title: 'Settlement never reached the bank',
         explanation: `Razorpay settled ${inr(s.net)} on ${s.settledAt} (UTR ${s.utr}, ${s.txnIds.length} transactions), but no matching credit exists in the bank statement. Raise a ticket with the UTR.`,
         evidence: [`gross credits ${inr(s.credits)}`, `debits ${inr(s.debits)}`],
@@ -388,6 +397,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
     if (diff < -BANK_TOLERANCE) {
       ex.push({
         type: 'BANK_SHORT_CREDIT', key: s.id, severity: 'loss', amount: -diff,
+        facts: { settlementId: s.id, utr: s.utr, settledOn: s.settledAt.slice(0, 10), net: s.net, bankCredit: b.deposit, bankDate: b.date, bankRef: b.tranId, shortBy: -diff },
         title: 'Bank received less than settled',
         explanation: `Settlement ${s.id} is ${inr(s.net)} but the bank credited ${inr(b.deposit)} on ${b.date}. ${inr(-diff)} is unaccounted for.`,
         evidence: [`UTR ${s.utr}`, `bank ref ${b.tranId}`],
@@ -395,6 +405,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
     } else if (diff > BANK_TOLERANCE) {
       ex.push({
         type: 'BANK_EXCESS_CREDIT', key: s.id, severity: 'review', amount: diff,
+        facts: { settlementId: s.id, utr: s.utr, settledOn: s.settledAt.slice(0, 10), net: s.net, bankCredit: b.deposit, bankDate: b.date, bankRef: b.tranId, excess: diff },
         title: 'Bank received more than settled',
         explanation: `Bank credited ${inr(b.deposit)} against a settlement of ${inr(s.net)}.`,
         evidence: [`bank ref ${b.tranId}`],
@@ -406,6 +417,7 @@ export function reconcile(ds: Dataset, opts: ReconOptions = {}): ReconResult {
     if (usedBank.has(b.tranId)) continue;
     ex.push({
       type: 'UNKNOWN_GATEWAY_CREDIT', key: b.tranId, severity: 'review', amount: b.deposit,
+      facts: { bankRef: b.tranId, bankDate: b.date, amount: b.deposit, narration: b.narration },
       title: 'Gateway credit with no settlement record',
       explanation: `${inr(b.deposit)} from Razorpay landed on ${b.date} but matches no settlement in the report. The report export may be missing a day.`,
       evidence: [`narration "${b.narration}"`],

@@ -133,6 +133,8 @@ export interface RecException {
   title: string;
   explanation: string;
   evidence: string[];
+  /** Structured facts behind the explanation. Drafts are built only from these. */
+  facts: Record<string, string | number>;
 }
 
 // AI stage contract (shared by browser, worker and precompute script)

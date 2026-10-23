@@ -73,12 +73,25 @@ Bank CSV ────┘                                                        
 | Collected less than order total | | |
 | Chargeback deducted | | |
 
+8. **Drafts.** "Draft the fix" on each exception group writes what to send, built only from the facts on the exception. Anything the engine cannot know stays a placeholder such as [merchant ID]:
+
+| Exception | Draft |
+|---|---|
+| Settlement never reached the bank, bank received less, gateway credit with no settlement | Support ticket to the payment gateway with settlement id, UTR, dates and amounts |
+| Fee above contract | One ticket for the whole group: a table of payment ids, expected and charged fee, and the total |
+| Customer charged twice, refund promised but never sent | A message to the customer and a refund instruction for your team |
+| Chargeback | A dispute evidence checklist |
+| Refund not recorded, collected less than total, order paid with no payment, payment with no order, bank received more | A note for the CA or ops team |
+
+   An optional AI polish rewrites one template at a time through a forced tool call. A fact guard in code then checks the rewrite: every amount, date, order number, payment id and UTR must already be in the template, and every placeholder must survive. If not, the app keeps the template and says why. The sample's 24 drafts are polished ahead of time, so the demo needs no live call; generated months and uploads use "Polish with AI". "Export exceptions (CSV)" gives the CA every exception with its evidence and a suggested action.
+
 ## Key decisions
 
 - **Rules first, AI last.** Deterministic matching is free, instant and auditable. The AI sees 10 of 600+ records. Cost stays flat as volume grows because only ambiguity scales the AI bill.
 - **Abstain over guess.** A wrong match in reconciliation is worse than no match: it hides two real problems. Every stage is tuned for zero wrong matches, and the tests enforce it.
 - **Measured, not claimed.** The synthetic generator plants each problem with a known answer, so accuracy, false alarms and misses are computed, not estimated.
 - **Privacy by default.** Parsing and matching run in the browser. Only the ambiguous records go to the AI, and only when the user clicks.
+- **Templates first, AI polish second.** A ticket with a wrong UTR or amount is worse than a plain one. The AI only rewords a template that is already correct, and the fact guard throws away any rewrite that adds a number or id.
 - **Cheap public demo.** The sample's AI results are precomputed, so reviewers get an instant result at zero cost. "Run the AI stage live" makes a real call, rate limited to 5 per minute per IP, with payload size and shape checks.
 
 ## Deliberately cut
@@ -93,7 +106,7 @@ Bank CSV ────┘                                                        
 1. Marketplace settlement reports with TCS and TDS deductions.
 2. COD remittance matching against courier reports.
 3. Learning from human review: confirmed matches become new rules for that merchant.
-4. Monthly close pack for the CA: exceptions export, GST on fees for input credit, journal entries.
+4. Monthly close pack for the CA: GST on fees for input credit and journal entries, next to the exceptions export.
 
 ## Run it
 
@@ -109,8 +122,9 @@ npm run robustness   # score 50 random months (add ANTHROPIC_API_KEY for the AI 
 ### Precompute the sample's AI stage
 
 ```bash
-ANTHROPIC_API_KEY=sk-ant-... npm run precompute   # writes src/sample/ai-run.json
-npm run eval                                       # now includes the AI row
+ANTHROPIC_API_KEY=sk-ant-... npm run precompute             # matching (src/sample/ai-run.json), then drafts
+ANTHROPIC_API_KEY=sk-ant-... npm run precompute -- drafts   # drafts only (src/sample/ai-drafts.json)
+npm run eval                                                 # now includes the AI row
 ```
 
 ### Deploy to Cloudflare Workers
@@ -129,17 +143,20 @@ Then add a custom domain under Workers & Pages > settlematch > Settings > Domain
 src/engine/normalize.ts   CSV parsing, column aliases, dates, money
 src/engine/reconcile.ts   the 7-stage pipeline, scoring, exceptions, money summary
 src/engine/ai.ts          prompt, tool schema, response validation, cost
+src/engine/drafts.ts      draft templates per exception type, the fact guard, CSV export
+src/engine/draft-ai.ts    AI polish for one draft: prompt, tool schema, guarded acceptance
 src/engine/evaluate.ts    scoring against the answer key
 src/engine/generate.ts    synthetic months with planted problems, seeded, runs in the browser
 src/App.tsx               UI
 why.html, src/why.css     static explainer page at /why (numbers checked by tests/why.test.ts)
-worker/index.ts           Cloudflare Worker: static assets + /api/resolve
+worker/index.ts           Cloudflare Worker: static assets + /api/resolve + /api/draft
 scripts/generate.ts       writes the sample month to disk
 scripts/robustness.ts     scores many random months
 scripts/precompute.ts     one-off AI run for the sample
 tests/engine.test.ts      pipeline guarantees (zero wrong matches, 100% recall, validation)
 tests/why.test.ts         every number on /why matches the engine
 tests/generate.test.ts    byte-identical sample, months vary by seed, zero wrong matches on random months
+tests/drafts.test.ts      drafts for every type, fact guard (hallucinated amount, changed UTR), CSV export
 ```
 
 ## Assumptions

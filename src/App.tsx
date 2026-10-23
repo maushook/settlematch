@@ -3,14 +3,19 @@ import { parseDataset, type ParseIssue } from './engine/normalize';
 import { DEFAULT_CONTRACT, reconcile } from './engine/reconcile';
 import { evaluate, type EvalResult } from './engine/evaluate';
 import { generateMonth } from './engine/generate';
+import { AUDIENCE_LABEL, draftsForGroup, exceptionsCsv, SUGGESTED_ACTION, type DraftPart } from './engine/drafts';
+import { acceptPolish, type PolishResult } from './engine/draft-ai';
 import type {
   AiRun, AnswerKey, Dataset, FeeContract, Mode, ReconResult, RecException, Severity,
 } from './engine/types';
 import answerKeyJson from './sample/answer-key.json';
 import aiRunJson from './sample/ai-run.json';
+import aiDraftsJson from './sample/ai-drafts.json';
 
 const SAMPLE_KEY = answerKeyJson as AnswerKey;
 const SAMPLE_AI = aiRunJson as AiRun | null;
+type Precomputed = Record<string, { template: { subject: string; body: string }; result: PolishResult }>;
+const SAMPLE_DRAFTS = (aiDraftsJson as { drafts: Precomputed }).drafts;
 const USD_INR = 88; // display only, approximate
 
 const inr = (n: number, dp = 0) =>
@@ -227,7 +232,7 @@ function Results({ source, contract, setContract, aiRun, setAiRun, mode, setMode
       {mode === 'ai' && aiRun && <AiDecisions r={active} aiRun={aiRun} data={data} />}
       <Leaks r={active} />
       <Waterfall r={active} />
-      <Exceptions list={active.exceptions} />
+      <Exceptions list={active.exceptions} precomputed={source.kind === 'sample' ? SAMPLE_DRAFTS : {}} fileName={source.seed !== undefined ? `seed-${source.seed}` : source.kind} />
       <Pipeline r={active} />
       <Records r={active} data={data} />
       <ContractEditor contract={contract} setContract={setContract} />
@@ -364,7 +369,7 @@ function Waterfall({ r }: { r: ReconResult }) {
 
 const SEV_ORDER: Severity[] = ['loss', 'liability', 'review'];
 
-function Exceptions({ list }: { list: RecException[] }) {
+function Exceptions({ list, precomputed, fileName }: { list: RecException[]; precomputed: Precomputed; fileName: string }) {
   const [filter, setFilter] = useState<Severity | 'all'>('all');
   const [open, setOpen] = useState<string | null>(null);
   const groups = new Map<string, RecException[]>();
@@ -377,7 +382,12 @@ function Exceptions({ list }: { list: RecException[] }) {
     b.reduce((s, x) => s + x.amount, 0) - a.reduce((s, x) => s + x.amount, 0));
   return (
     <section className="block">
-      <h3>What needs action</h3>
+      <div className="ex-bar">
+        <h3>What needs action</h3>
+        <button className="btn small" disabled={!list.length} onClick={() => downloadCsv(exceptionsCsv(list), `settlematch-exceptions-${fileName}.csv`)}>
+          Export exceptions (CSV)
+        </button>
+      </div>
       <div className="chips">
         {(['all', ...SEV_ORDER] as const).map((f) => (
           <button key={f} className={`chip ${filter === f ? 'on' : ''}`} onClick={() => setFilter(f)}>
@@ -400,6 +410,10 @@ function Exceptions({ list }: { list: RecException[] }) {
                 </button>
                 {isOpen && (
                   <ul className="ex-list">
+                    <li className="ex-fix">
+                      <span>{SUGGESTED_ACTION[items[0].type as RecException['type']]}</span>
+                      <DraftFix items={items} precomputed={precomputed} />
+                    </li>
                     {items.sort((a, b) => b.amount - a.amount).map((e) => (
                       <li key={e.key} className="ex">
                         <div className="ex-top"><code>{e.key}</code><span className="ex-amt">{inr(e.amount, 2)}</span></div>
@@ -415,6 +429,87 @@ function Exceptions({ list }: { list: RecException[] }) {
         </ul>
       )}
     </section>
+  );
+}
+
+function downloadCsv(text: string, name: string) {
+  const url = URL.createObjectURL(new Blob([text], { type: 'text/csv;charset=utf-8' }));
+  const a = document.createElement('a');
+  a.href = url; a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+// ---------------- drafts ----------------
+function DraftFix({ items, precomputed }: { items: RecException[]; precomputed: Precomputed }) {
+  const [show, setShow] = useState(false);
+  const parts = useMemo(() => (show ? draftsForGroup(items) : []), [show, items]);
+  return (
+    <>
+      <button className="btn small" aria-expanded={show} onClick={() => setShow((v) => !v)}>{show ? 'Hide the drafts' : 'Draft the fix'}</button>
+      {show && (
+        <div className="drafts">
+          {/* Keyed by content too, so editing the fee contract resets a card to its new template. */}
+          {parts.map((p) => <DraftCard key={`${p.id}:${p.subject}:${p.body}`} part={p} pre={precomputed[p.id]} />)}
+        </div>
+      )}
+    </>
+  );
+}
+
+function DraftCard({ part, pre }: { part: DraftPart; pre?: Precomputed[string] }) {
+  const input = { audience: part.audience, subject: part.subject, body: part.body };
+  // Use a precomputed polish only if it was made from this exact template, and check its facts again here.
+  const initial = (): PolishResult => {
+    if (pre && pre.template.subject === part.subject && pre.template.body === part.body && pre.result.polished) {
+      return acceptPolish(input, { content: [{ type: 'tool_use', input: pre.result }] });
+    }
+    return { ...input, polished: false };
+  };
+  const [draft, setDraft] = useState<PolishResult>(initial);
+  const [state, setState] = useState<{ busy: boolean; tried: boolean; error?: string; copied?: boolean }>({ busy: false, tried: false });
+
+  async function polish() {
+    setState({ busy: true, tried: true });
+    try {
+      const res = await fetch('/api/draft', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ draft: input }) });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.error ?? `Request failed (${res.status})`);
+      // The server already ran the fact guard; run it again so the browser never shows an unchecked rewrite.
+      setDraft(body.polished ? acceptPolish(input, { content: [{ type: 'tool_use', input: body }] }) : { ...input, polished: false, note: body.note });
+      setState({ busy: false, tried: true });
+    } catch (e) {
+      setState({ busy: false, tried: true, error: e instanceof Error ? e.message : 'AI request failed' });
+    }
+  }
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(`Subject: ${draft.subject}
+
+${draft.body}`);
+      setState((s) => ({ ...s, copied: true }));
+      setTimeout(() => setState((s) => ({ ...s, copied: false })), 1500);
+    } catch {
+      setState((s) => ({ ...s, error: 'Copy failed. Select the text and copy it instead.' }));
+    }
+  }
+  const wide = /^-{3,}( +-{3,})+$/m.test(draft.body);
+  return (
+    <div className="draft">
+      <div className="draft-head">
+        <span className="draft-label">{part.label || AUDIENCE_LABEL[part.audience]}</span>
+        <span className={`tag ${draft.polished ? 'ai' : 'rule'}`}>{draft.polished ? 'AI polished' : 'Template'}</span>
+      </div>
+      <p className="draft-subject">Subject: {draft.subject}</p>
+      <pre className={`draft-body ${wide ? 'wide' : ''}`}>{draft.body}</pre>
+      <div className="draft-actions">
+        <button className="btn small" onClick={copy}>{state.copied ? 'Copied' : 'Copy'}</button>
+        {!draft.polished && (!state.tried || state.busy) && (
+          <button className="btn small ghost" onClick={polish} disabled={state.busy}>{state.busy ? 'Polishing…' : 'Polish with AI'}</button>
+        )}
+        {draft.note && <span className="draft-note">{draft.note}</span>}
+        {state.error && <span className="draft-note err">{state.error}</span>}
+      </div>
+    </div>
   );
 }
 
