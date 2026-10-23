@@ -97,15 +97,22 @@ describe('pipeline', () => {
 });
 
 describe('ai response parsing', () => {
-  it('drops unknown ids and off-list matches, clamps confidence', () => {
-    const packets = [{ kind: 'payment' as const, id: 'p1', fields: {}, candidates: [{ id: '#1', fields: {}, heuristicScore: 50 }] }];
-    const json = { content: [{ type: 'tool_use', input: { decisions: [
-      { kind: 'payment', id: 'p1', match: '#999', confidence: 7, reason: 'x' },
-      { kind: 'payment', id: 'nope', match: '#1', confidence: 0.9, reason: 'x' },
-    ] } }] };
-    const d = parseResponse(json, packets);
+  const packets = [{ kind: 'payment' as const, id: 'p1', fields: {}, candidates: [{ id: '#1231', fields: {}, heuristicScore: 50 }] }];
+  const wrap = (decisions: unknown[]) => ({ content: [{ type: 'tool_use', input: { decisions } }] });
+
+  it('drops unknown ids and off-list matches', () => {
+    const d = parseResponse(wrap([
+      { kind: 'payment', id: 'p1', reasoning: 'x', match: '#999', strength: 'strong' },
+      { kind: 'payment', id: 'nope', reasoning: 'x', match: '#1231', strength: 'strong' },
+    ]), packets);
     expect(d).toHaveLength(1);
     expect(d[0].match).toBeNull();
-    expect(d[0].confidence).toBe(1);
+  });
+
+  it('maps evidence strength to confidence and tolerates a missing #', () => {
+    const [d] = parseResponse(wrap([{ kind: 'payment', id: 'p1', reasoning: 'decoded', match: '1231', strength: 'moderate' }]), packets);
+    expect(d.match).toBe('#1231');
+    expect(d.confidence).toBe(0.75);
+    expect(d.reason).toBe('decoded');
   });
 });

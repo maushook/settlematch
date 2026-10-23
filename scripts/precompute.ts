@@ -21,5 +21,5 @@ const packets = reconcile(data, { mode: 'heuristic' }).pendingPackets;
 console.log(`Sending ${packets.length} ambiguous records to ${process.env.AI_MODEL || DEFAULT_MODEL}...`);
 const out = await callClaude(packets, apiKey, process.env.AI_MODEL || DEFAULT_MODEL);
 fs.writeFileSync(path.join(root, 'src/sample/ai-run.json'), JSON.stringify({ ...out, createdAt: new Date().toISOString() }, null, 2));
-for (const d of out.decisions) console.log(`${d.id} -> ${d.match ?? 'null'} (${d.confidence}) ${d.reason}`);
+for (const d of out.decisions) console.log(`${d.id} -> ${d.match ?? 'null'} [${d.strength ?? d.confidence}] ${d.reason}`);
 console.log(`tokens in=${out.usage.inputTokens} out=${out.usage.outputTokens} cost=$${out.usage.costUsd.toFixed(5)} latency=${out.usage.latencyMs}ms`);

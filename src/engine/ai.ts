@@ -14,18 +14,21 @@ Each item is either:
 - a gateway PAYMENT that no rule could tie to a Shopify ORDER, with candidate orders, or
 - a BANK credit from the payment gateway that no UTR could tie to a SETTLEMENT, with candidate settlements.
 
-Pick the candidate the evidence actually supports, or null if none clearly fits.
+Candidates were shortlisted because their amount and date already fit. Amount and date therefore do not tell them apart. Your job is to decide which candidate the remaining evidence points to.
 
-How to read the evidence:
-- Payment notes are written by real customers: Hinglish, typos, nicknames, relations ("aunty", "sir", "didi"), spelling variants of Indian names (Laxmi = Lakshmi, Venky = Venkatesh), the letter O or l typed for 0 or 1, and numbers spelled out in words.
-- Products are often described informally or in Hindi (e.g. "mor" means peacock, "sone ki patti" means gold leaf, a place name can point to a landmark artwork).
-- The payer is often not the customer (gifts, family members), so a different email or phone is normal.
-- An order whose payment reference is "not found in gateway" is a weak candidate unless the notes point to it.
-- Amounts and dates are usually tied between candidates; decide on the notes, names and products.
-- For bank credits, prefer the settlement whose net amount and date match the deposit.
+How to read payment notes:
+- They are written by real customers: Hinglish or other Indian languages, typos, nicknames, relations (aunty, sir, didi, bhaiya), spelling variants of Indian names, letters typed for digits (O for 0, l or I for 1), and numbers written out in words. Decode them.
+- Products are often described by what the artwork shows, in Hindi or English, or by a place or landmark it depicts, instead of the catalogue name. Translate and compare with each candidate's items.
+- The payer is often not the customer (gifts, family), so a payer email or phone that differs from the order is normal and is NOT evidence against a match.
+- An order whose payment reference is "not found in gateway" probably has its own missing payment. Pick it only if the notes point to it specifically.
+- For bank credits, compare the deposit with each settlement's net amount and date.
 
-Never guess. If two candidates fit equally, return null. Confidence is your probability of being right (0 to 1).
-Keep each reason under 20 words and cite the specific evidence.`;
+For each item, first write your reasoning, then choose:
+- strength "strong": the notes identify exactly one candidate (a decoded order number, a name variant of exactly one customer, or a product description that fits exactly one candidate's items).
+- strength "moderate": the evidence clearly favours one candidate but involves some interpretation.
+- strength "weak": a slight lean only. Use match null.
+- strength "none": nothing in the evidence separates the candidates. Use match null.
+Copy candidate ids exactly as given (including any #).`;
 
 export const DECISION_TOOL = {
   name: 'submit_decisions',
@@ -40,17 +43,21 @@ export const DECISION_TOOL = {
           properties: {
             kind: { type: 'string', enum: ['payment', 'bank'] },
             id: { type: 'string' },
+            reasoning: { type: 'string', description: 'One or two sentences decoding the evidence, written before deciding.' },
             match: { type: ['string', 'null'] },
-            confidence: { type: 'number' },
-            reason: { type: 'string' },
+            strength: { type: 'string', enum: ['strong', 'moderate', 'weak', 'none'] },
           },
-          required: ['kind', 'id', 'match', 'confidence', 'reason'],
+          required: ['kind', 'id', 'reasoning', 'match', 'strength'],
         },
       },
     },
     required: ['decisions'],
   },
 } as const;
+
+// Small models give poorly calibrated raw probabilities, so the model picks a defined
+// evidence category and the engine maps it to a confidence.
+export const STRENGTH_CONFIDENCE = { strong: 0.95, moderate: 0.75, weak: 0.35, none: 0 } as const;
 
 export function buildRequestBody(packets: AiPacket[], model = DEFAULT_MODEL) {
   const items = packets.map((p) => ({
@@ -74,13 +81,19 @@ export function parseResponse(json: any, packets: AiPacket[]): AiDecision[] {
   const block = (json?.content ?? []).find((b: any) => b.type === 'tool_use');
   const raw: any[] = block?.input?.decisions ?? [];
   const byId = new Map(packets.map((p) => [`${p.kind}:${p.id}`, p]));
+  const canon = (x: string) => x.replace(/[^0-9a-z_]/gi, '').toLowerCase();
   const out: AiDecision[] = [];
   for (const d of raw) {
     const pk = byId.get(`${d?.kind}:${d?.id}`);
     if (!pk) continue;
-    const match = typeof d.match === 'string' && pk.candidates.some((c) => c.id === d.match) ? d.match : null;
-    const confidence = Math.max(0, Math.min(1, Number(d.confidence) || 0));
-    out.push({ kind: pk.kind, id: pk.id, match, confidence, reason: String(d.reason ?? '').slice(0, 200) });
+    // Accept "1231" for "#1231", but nothing outside the offered shortlist.
+    const match = typeof d.match === 'string'
+      ? pk.candidates.find((c) => c.id === d.match || canon(c.id) === canon(d.match))?.id ?? null
+      : null;
+    const strength = d.strength in STRENGTH_CONFIDENCE ? (d.strength as keyof typeof STRENGTH_CONFIDENCE) : undefined;
+    const confidence = strength ? STRENGTH_CONFIDENCE[strength] : Math.max(0, Math.min(1, Number(d.confidence) || 0));
+    const reason = String(d.reasoning ?? d.reason ?? '').slice(0, 240);
+    out.push({ kind: pk.kind, id: pk.id, match, confidence, strength, reason });
   }
   return out;
 }

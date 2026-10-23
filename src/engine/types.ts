@@ -153,6 +153,7 @@ export interface AiDecision {
   id: string;
   match: string | null;
   confidence: number;
+  strength?: 'strong' | 'moderate' | 'weak' | 'none';
   reason: string;
 }
 

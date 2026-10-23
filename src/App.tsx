@@ -376,7 +376,7 @@ function AiDecisions({ r, aiRun, data }: { r: ReconResult; aiRun: AiRun; data: D
   return (
     <section className="block">
       <h3>What the AI decided, and why</h3>
-      <p className="sub">These are the records heuristics refused to guess on. A decision is applied only if it picks one of the offered candidates with confidence of 0.6 or more.</p>
+      <p className="sub">These are the records heuristics refused to guess on. A decision is applied only if it picks one of the offered candidates with strong or moderate evidence.</p>
       <ul className="ai-list">
         {aiRun.decisions.map((d) => {
           const p = pay.get(d.id); const o = d.match ? ord.get(d.match) : undefined;
@@ -386,7 +386,7 @@ function AiDecisions({ r, aiRun, data }: { r: ReconResult; aiRun: AiRun; data: D
               <div className="ai-arrow">
                 {o ? <>{o.id}, {o.items.replace(/ x1/g, '')}, {o.customerName}</> : d.match ?? 'No match: left for review'}
               </div>
-              <div className="ai-why">{d.reason} <span className="conf">confidence {d.confidence.toFixed(2)}{!applied.has(d.id) && d.match ? ', not applied' : ''}</span></div>
+              <div className="ai-why">{d.reason} <span className="conf">{d.strength ? `${d.strength} evidence` : `confidence ${d.confidence.toFixed(2)}`}{!applied.has(d.id) && d.match ? ', not applied' : ''}</span></div>
             </li>
           );
         })}
