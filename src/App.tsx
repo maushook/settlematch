@@ -11,8 +11,6 @@ import aiRunJson from './sample/ai-run.json';
 const SAMPLE_KEY = answerKeyJson as AnswerKey;
 const SAMPLE_AI = aiRunJson as AiRun | null;
 const USD_INR = 88; // display only, approximate
-// Set this to your public repo URL before deploying.
-const REPO_URL = 'https://github.com/maushook/settlematch';
 
 const inr = (n: number, dp = 0) =>
   `₹${n.toLocaleString('en-IN', { minimumFractionDigits: dp, maximumFractionDigits: dp })}`;
@@ -64,7 +62,6 @@ export default function App() {
         <a className="brand" href="/"><span className="brand-mark">₹</span> SettleMatch</a>
         <nav className="top-nav" aria-label="Main">
           <a className="top-link" href="/why">Why it matters</a>
-          {REPO_URL && <a className="top-link" href={REPO_URL} target="_blank" rel="noreferrer">Source</a>}
         </nav>
       </header>
 
