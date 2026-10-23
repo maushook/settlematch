@@ -12,6 +12,11 @@ interface Env {
   AI_LIMITER?: { limit: (o: { key: string }) => Promise<{ success: boolean }> };
 }
 
+// The app is served under this prefix on maushook.com, where other paths belong to another site.
+// The workers.dev address also accepts paths without it, so the old link keeps working.
+const PREFIX = '/settlematch';
+const acceptsUnprefixed = (host: string) => host.endsWith('.workers.dev');
+
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
 
@@ -26,7 +31,16 @@ function validPackets(x: unknown): x is AiPacket[] {
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
-    if (url.pathname !== '/api/resolve' && url.pathname !== '/api/draft') return env.ASSETS.fetch(req);
+    if (url.pathname === PREFIX) return Response.redirect(`${url.origin}${PREFIX}/${url.search}`, 301);
+    let path: string;
+    if (url.pathname.startsWith(`${PREFIX}/`)) path = url.pathname.slice(PREFIX.length);
+    else if (acceptsUnprefixed(url.hostname)) path = url.pathname;
+    else return new Response('Not found', { status: 404 });
+
+    if (path !== '/api/resolve' && path !== '/api/draft') {
+      if (path.startsWith('/api/')) return json({ error: 'Not found' }, 404);
+      return env.ASSETS.fetch(new Request(new URL(`${path}${url.search}`, url.origin), req));
+    }
     if (req.method !== 'POST') return json({ error: 'POST only' }, 405);
     if (!env.ANTHROPIC_API_KEY) return json({ error: 'AI is not configured on this deployment.' }, 503);
 
@@ -42,7 +56,7 @@ export default {
     try { body = JSON.parse(text); } catch { return json({ error: 'Invalid JSON' }, 400); }
 
     // POST /api/draft: polish one draft. The body is a single template built from one exception group.
-    if (url.pathname === '/api/draft') {
+    if (path === '/api/draft') {
       if (!validDraftInput(body?.draft)) return json({ error: 'Send one draft: audience, subject (up to 300 characters) and body (up to 6,000).' }, 400);
       try {
         const { audience, subject, body: text } = body.draft;

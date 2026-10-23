@@ -6,7 +6,7 @@ Indian D2C sellers collect through a payment gateway, but the money that lands i
 
 SettleMatch takes three exports, reconciles them end to end, and returns every gap typed, sized in rupees and explained.
 
-- **Live demo:** `https://<your-domain>` (click "Run on sample data")
+- **Live demo:** https://maushook.com/settlematch/ (click "Run on sample data")
 - **Inputs:** Shopify orders export, Razorpay settlement report, bank statement (CSV)
 
 ## Results on the sample
@@ -112,7 +112,7 @@ Bank CSV ────┘                                                        
 
 ```bash
 npm install
-npm run dev          # local app at http://localhost:5173
+npm run dev          # local app at http://localhost:5173/settlematch/
 npm test             # engine tests
 npm run generate     # regenerate the synthetic sample + answer key (seed 20260930)
 npm run eval         # print the ablation table
@@ -135,7 +135,7 @@ npx wrangler secret put ANTHROPIC_API_KEY
 npm run deploy
 ```
 
-Then add a custom domain under Workers & Pages > settlematch > Settings > Domains & Routes.
+The app is served at `https://maushook.com/settlematch/`. `wrangler.jsonc` routes only `maushook.com/settlematch` and `maushook.com/settlematch/*` to the Worker, so the rest of the zone keeps serving its own site. The Worker redirects `/settlematch` to `/settlematch/`, strips the prefix before serving assets or `/api/*`, and returns 404 for anything else. Vite builds with `base: '/settlematch/'`, and app code builds every URL from `import.meta.env.BASE_URL`. The workers.dev address stays on and also accepts paths without the prefix.
 
 ## Repo map
 

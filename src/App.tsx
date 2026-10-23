@@ -17,6 +17,9 @@ const SAMPLE_AI = aiRunJson as AiRun | null;
 type Precomputed = Record<string, { template: { subject: string; body: string }; result: PolishResult }>;
 const SAMPLE_DRAFTS = (aiDraftsJson as { drafts: Precomputed }).drafts;
 const USD_INR = 88; // display only, approximate
+// The app lives under a path prefix (vite.config.ts base), so every URL is built from BASE_URL.
+const BASE = import.meta.env.BASE_URL;
+const at = (path = '') => `${BASE}${path}`;
 
 const inr = (n: number, dp = 0) =>
   `₹${n.toLocaleString('en-IN', { minimumFractionDigits: dp, maximumFractionDigits: dp })}`;
@@ -53,7 +56,7 @@ export default function App() {
 
   async function runSample() {
     setLoading(true); setIssues([]);
-    const get = (f: string) => fetch(`/sample/${f}`).then((r) => r.text());
+    const get = (f: string) => fetch(at(`sample/${f}`)).then((r) => r.text());
     const [orders, gateway, bank] = await Promise.all([get('shopify_orders.csv'), get('razorpay_settlement_report.csv'), get('bank_statement.csv')]);
     const { data, issues } = parseDataset({ orders, gateway, bank });
     setIssues(issues);
@@ -96,9 +99,9 @@ export default function App() {
   return (
     <div className="page">
       <header className="top">
-        <a className="brand" href="/"><span className="brand-mark">₹</span> SettleMatch</a>
+        <a className="brand" href={at()}><span className="brand-mark">₹</span> SettleMatch</a>
         <nav className="top-nav" aria-label="Main">
-          <a className="top-link" href="/why">Why it matters</a>
+          <a className="top-link" href={at('why')}>Why it matters</a>
         </nav>
       </header>
 
@@ -154,7 +157,7 @@ function UploadPanel({ onRun }: { onRun: (f: { orders: string; gateway: string; 
         const f = e.target.files?.[0]; if (!f) return;
         const text = await f.text(); setFiles((s) => ({ ...s, [k]: text }));
       }} />
-      <a href={`/sample/${sample}`} download>Download template</a>
+      <a href={at(`sample/${sample}`)} download>Download template</a>
       {files[k] && <span className="ok">Loaded</span>}
     </label>
   );
@@ -200,7 +203,7 @@ function Results({ source, contract, setContract, aiRun, setAiRun, mode, setMode
   async function runAiLive() {
     setAiState({ busy: true });
     try {
-      const res = await fetch('/api/resolve', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ packets: pending }) });
+      const res = await fetch(at('api/resolve'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ packets: pending }) });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? `Request failed (${res.status})`);
       setAiRun({ ...body, live: true });
@@ -221,7 +224,7 @@ function Results({ source, contract, setContract, aiRun, setAiRun, mode, setMode
             {' '}{active.counts.bankCredits} gateway credits in the bank. Reconciled in {active.runtimeMs} ms in your browser.
           </p>
           {source.seed !== undefined && (
-            <p className="meta">Seed {source.seed}. <a href={`/?seed=${source.seed}`}>Link to this month</a></p>
+            <p className="meta">Seed {source.seed}. <a href={at(`?seed=${source.seed}`)}>Link to this month</a></p>
           )}
         </div>
       </div>
@@ -471,7 +474,7 @@ function DraftCard({ part, pre }: { part: DraftPart; pre?: Precomputed[string] }
   async function polish() {
     setState({ busy: true, tried: true });
     try {
-      const res = await fetch('/api/draft', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ draft: input }) });
+      const res = await fetch(at('api/draft'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ draft: input }) });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? `Request failed (${res.status})`);
       // The server already ran the fact guard; run it again so the browser never shows an unchecked rewrite.
