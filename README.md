@@ -17,7 +17,7 @@ The sample is synthetic (300 orders, 289 gateway rows, 36 bank lines) with 25 pr
 |---|---|---|---|---|---|
 | Exact rules | 94.4% | 0 | 34 | 25 of 25 | none |
 | + Heuristics | 96.7% | 0 | 20 | 25 of 25 | none |
-| + AI | see app / `npm run eval` | | | | 10 records |
+| + AI | 99.7% | 0 | 2 | 25 of 25 | 10 records, $0.0013 |
 
 Reproduce with `npm run eval`. The app shows the same table live, and each column is clickable.
 
@@ -25,6 +25,7 @@ What the numbers say:
 - **Rules are safe but noisy.** They never link the wrong records, but every payment they can't place shows up as two false alarms (an "unpaid" order and an "orphan" payment).
 - **Heuristics take the clear cases and refuse the rest.** They commit only when a candidate scores at least 70 and leads the runner-up by 20. On the 10 hard payments the candidates tie, so heuristics abstain rather than guess.
 - **AI only sees those 10 leftovers**, each with at most 5 candidates. Notes like "mor wala print" (Hindi for peacock), "paying for Laxmi aunty order" or "pymt agnst ord l226" need language and world knowledge, which is exactly where a model earns its cost. One call, a few thousand tokens, a fraction of a rupee.
+- **The one miss is an abstention, not a wrong match.** For "gol design wali badi painting" three Mandala orders fit, so the model abstained and the payment went to human review instead of a guess. That single unplaced payment is both remaining false alarms.
 
 ## How it works
 
