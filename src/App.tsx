@@ -61,8 +61,11 @@ export default function App() {
   return (
     <div className="page">
       <header className="top">
-        <div className="brand"><span className="brand-mark">₹</span> SettleMatch</div>
-        {REPO_URL && <a className="top-link" href={REPO_URL} target="_blank" rel="noreferrer">Source on GitHub</a>}
+        <a className="brand" href="/"><span className="brand-mark">₹</span> SettleMatch</a>
+        <nav className="top-nav" aria-label="Main">
+          <a className="top-link" href="/why">Why it matters</a>
+          {REPO_URL && <a className="top-link" href={REPO_URL} target="_blank" rel="noreferrer">Source</a>}
+        </nav>
       </header>
 
       <section className="hero">

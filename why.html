@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why it matters | SettleMatch</title>
+    <meta name="description" content="Money slips between checkout and the bank every month. SettleMatch reconciles Shopify orders, gateway settlements and the bank statement, and explains every gap." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2315233F'/><text x='16' y='23' font-size='19' text-anchor='middle' fill='white' font-family='sans-serif'>₹</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/why.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <a class="brand" href="/"><span class="brand-mark">₹</span> SettleMatch</a>
+        <nav class="top-nav" aria-label="Main">
+          <a class="top-link" href="/why" aria-current="page">Why it matters</a>
+          <a class="top-link" href="https://github.com/maushook/settlematch" target="_blank" rel="noreferrer">Source</a>
+        </nav>
+      </header>
+
+      <!-- Every number on this page comes from `npm run eval` or the app's sample run. tests/why.test.ts checks them. -->
+
+      <section class="hero">
+        <h1>Money slips between checkout and the bank every month. Nobody notices, because nobody reconciles three files by hand.</h1>
+        <p class="lede">
+          Shopify records what the customer paid, the gateway settles that amount minus fees, GST on those fees, refunds and
+          chargebacks, and the bank shows one credit for a batch of days. The three files never agree, so a missing
+          settlement or a refund that was never sent hides inside differences everyone expects.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="/">See it on a sample month</a>
+        </div>
+      </section>
+
+      <section class="w-section" aria-labelledby="month">
+        <p class="eyebrow">One month, reconciled</p>
+        <h2 id="month">What one month looks like</h2>
+        <p class="sub">
+          The sample is a fictional wall-art brand: 300 Shopify orders, 289 gateway rows and 36 bank lines for September,
+          with 25 problems planted on purpose so every result can be checked.
+        </p>
+        <dl class="stats">
+          <div class="stat"><dt>Planted problems found</dt><dd>25 of 25</dd></div>
+          <div class="stat loss"><dt>Money at risk</dt><dd>₹19,876</dd></div>
+          <div class="stat liability"><dt>Owed to customers</dt><dd>₹14,344</dd></div>
+          <div class="stat"><dt>Time to reconcile</dt><dd>Under 5 ms</dd></div>
+        </dl>
+        <p class="note">Runtime: 3.0 to 4.4 ms across five sample runs in the browser, AI answers precomputed.</p>
+
+        <ul class="catches">
+          <li class="catch loss">
+            <span class="catch-type">Settlement never reached the bank</span>
+            <span class="catch-amt">₹6,832.84</span>
+            <p>The gateway settled it on 17 September with a UTR, and no matching credit exists in the bank statement. The app tells you to raise a ticket with that UTR.</p>
+          </li>
+          <li class="catch liability">
+            <span class="catch-type">Refunds marked done, never sent</span>
+            <span class="catch-amt">₹7,696</span>
+            <p>Shopify shows 3 orders as refunded, but the gateway processed no refund for any of them. Those customers may still be waiting.</p>
+          </li>
+          <li class="catch liability">
+            <span class="catch-type">Customers charged twice</span>
+            <span class="catch-amt">₹6,648</span>
+            <p>2 orders were paid twice, 5 and 9 minutes apart. Each second payment needs a refund.</p>
+          </li>
+          <li class="catch loss">
+            <span class="catch-type">Card fee above contract</span>
+            <span class="catch-amt">₹97.84</span>
+            <p>9 card payments were charged 2.36% against a 2% contract. Small per payment, and it repeats every month until someone checks.</p>
+          </li>
+          <li class="catch loss">
+            <span class="catch-type">Bank credited less than settled</span>
+            <span class="catch-amt">₹1,250</span>
+            <p>A settlement of ₹44,776.43 arrived in the bank as ₹43,526.43 on 10 September. The difference is unaccounted for.</p>
+          </li>
+          <li class="catch ai">
+            <span class="catch-type">AI stage: a note only a person could read</span>
+            <span class="catch-amt">#1100</span>
+            <p>A payment link came in with the note "mor wala print, link from whatsapp" and three orders of the same amount. The AI read "mor" as peacock and matched it to #1100, Madhubani Peacock Print.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="w-section" aria-labelledby="how">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how">Rules first, AI last</h2>
+        <ol class="steps">
+          <li><strong>Read the exports.</strong> Load the Shopify orders export, the gateway settlement report and the bank statement as CSV. Column names, Indian date formats and rupee amounts are normalized.</li>
+          <li><strong>Match on exact identifiers.</strong> Tie each payment to its order by payment reference or order receipt, and each settlement to its bank credit by UTR.</li>
+          <li><strong>Check every fee.</strong> Recompute the fee from your contract, by method and card network, plus 18% GST on the fee, and flag any payment charged more.</li>
+          <li><strong>Score the near misses.</strong> For records with no exact identifier, score candidates on amount, date, email, phone, name and product. Commit only when one candidate clearly leads.</li>
+          <li><strong>Send only the leftovers to AI.</strong> The records the scores could not separate go to the model with at most 5 candidates each. Its answer must be one of those candidates, or the record goes to a person.</li>
+          <li><strong>Explain every gap.</strong> Each problem comes back typed, sized in rupees, and written in plain language with the evidence behind it.</li>
+        </ol>
+      </section>
+
+      <section class="w-section" aria-labelledby="measured">
+        <p class="eyebrow">Measured, not claimed</p>
+        <h2 id="measured">Each stage, scored against the answer key</h2>
+        <p class="sub">The generator that made the sample also wrote down the right answer for every record, so each stage is scored, not estimated.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Stage</th><th class="num">Matched correctly</th><th class="num">Wrong matches</th><th class="num">False alarms</th><th class="num">Problems found</th><th class="num">Sent to AI</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Exact rules</td><td class="num">94.4%</td><td class="num">0</td><td class="num">34</td><td class="num">25 of 25</td><td class="num">none</td></tr>
+              <tr><td>+ Heuristics</td><td class="num">96.7%</td><td class="num">0</td><td class="num">20</td><td class="num">25 of 25</td><td class="num">none</td></tr>
+              <tr><td>+ AI</td><td class="num">99.7%</td><td class="num">0</td><td class="num">2</td><td class="num">25 of 25</td><td class="num">10 records, $0.0013</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="para">
+          The AI stage left one payment unmatched. Its note said "gol design wali badi painting", and three Mandala orders
+          fit, so the model abstained and the payment went to human review. That one record is both remaining false alarms.
+          A wrong match would be worse: it marks an unpaid order as paid and hides a real payment, so two problems disappear
+          from view. Every stage is built to stop at "not sure".
+        </p>
+      </section>
+
+      <section class="w-section" aria-labelledby="who">
+        <p class="eyebrow">Who it is for</p>
+        <h2 id="who">For the people who close the month</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Founders</h3>
+            <p>See in one screen how much of last month's revenue reached the bank, what leaked on the way, and which customers are owed money.</p>
+          </div>
+          <div class="card">
+            <h3>CAs and finance teams</h3>
+            <p>Replace the monthly spreadsheet match with typed exceptions and evidence you can hand to a client, plus GST on fees for input credit.</p>
+          </div>
+          <div class="card">
+            <h3>Payment gateways</h3>
+            <p>Offered to merchants, it turns "where is my money" support tickets into a page the merchant can check themselves, with the UTR and the reason.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-section" aria-labelledby="trust">
+        <p class="eyebrow">Why it can be trusted</p>
+        <h2 id="trust">Built to be checked</h2>
+        <ul class="trust">
+          <li><strong>Zero wrong matches.</strong> Every stage on the sample links no record to the wrong one, and the tests fail if that changes.</li>
+          <li><strong>Every line explains itself.</strong> Each match shows the rule, score or AI reason behind it, and each problem shows its evidence.</li>
+          <li><strong>Your data stays in the browser.</strong> Parsing and matching run on your machine. Only ambiguous records go to the AI, and only when you ask.</li>
+          <li><strong>Your fee contract, not ours.</strong> Edit the rates in the app and every fee check updates instantly.</li>
+        </ul>
+      </section>
+
+      <section class="closing" aria-labelledby="close">
+        <h2 id="close">See a full month reconciled in your browser</h2>
+        <p>Run the sample, then switch between the three stages and open any exception to see its evidence.</p>
+        <a class="btn primary" href="/">See it on a sample month</a>
+      </section>
+
+      <footer class="foot">
+        Built by Muhammath Maushook for the Razorpay AI Builders challenge. Sample data is synthetic.
+      </footer>
+    </div>
+  </body>
+</html>

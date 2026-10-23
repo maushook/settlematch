@@ -110,10 +110,12 @@ src/engine/reconcile.ts   the 7-stage pipeline, scoring, exceptions, money summa
 src/engine/ai.ts          prompt, tool schema, response validation, cost
 src/engine/evaluate.ts    scoring against the answer key
 src/App.tsx               UI
+why.html, src/why.css     static explainer page at /why (numbers checked by tests/why.test.ts)
 worker/index.ts           Cloudflare Worker: static assets + /api/resolve
 scripts/generate.ts       synthetic data with planted problems
 scripts/precompute.ts     one-off AI run for the sample
 tests/engine.test.ts      pipeline guarantees (zero wrong matches, 100% recall, validation)
+tests/why.test.ts         every number on /why matches the engine
 ```
 
 ## Assumptions
