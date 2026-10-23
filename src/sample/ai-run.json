@@ -1,1 +1,92 @@
-null
+{
+  "decisions": [
+    {
+      "kind": "payment",
+      "id": "pay_FVFzMkcv8VpbJ6",
+      "match": null,
+      "confidence": 0.35,
+      "strength": "weak",
+      "reason": "Note says 'gol design wali badi painting' (round design, big painting) for didi. Candidate #1055 and #1011 are Mandala Canvas (round mandala fits) but both are gateway orders with missing references; #1043 is a manual Mandala Canvas order by Ritu Chatterjee; #1040 is Kerala Backwaters. The note doesn't name a customer, so the product fit is generic across three mandala orders."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_V8vkZFibifyTRK",
+      "match": "#1040",
+      "confidence": 0.95,
+      "strength": "strong",
+      "reason": "'houseboat wali canvas, green one' refers to the Kerala Backwaters (houseboat) canvas, which only #1040 (Isha Gupta) carries. Mandala candidates do not match the houseboat description."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_7Ex62oqJzXYAYg",
+      "match": "#1100",
+      "confidence": 0.95,
+      "strength": "strong",
+      "reason": "'mor wala print' means peacock print, matching #1100 Madhubani Peacock Print. #1106 is Warli and #1067 is Jaipur Doors, which do not fit."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_jjFZ7tKn2nnwqL",
+      "match": "#1106",
+      "confidence": 0.75,
+      "strength": "moderate",
+      "reason": "'tribal stick figure' suggests Warli art, which matches #1106 Warli Harvest Frame. The payer email is different but payer differences are normal. #1100 is Madhubani and #1067 is Jaipur Doors."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_DU3cRwJZkfG7jW",
+      "match": "#1158",
+      "confidence": 0.95,
+      "strength": "strong",
+      "reason": "'Agra wali painting, evening colours' suggests a Taj/Agra landmark with a sunset feel. #1158 Taj Sunset Panorama matches the landmark and the evening colours. #1160 is Gold Leaf Abstract Trio."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_9opsAkJMwXyjxa",
+      "match": "#1160",
+      "confidence": 0.95,
+      "strength": "strong",
+      "reason": "'sone ki patti wala' means gold leaf, matching #1160 Gold Leaf Abstract Trio. The 3 piece note also matches the trio. #1158 is a Taj panorama."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_xXZETLt6GcMYHw",
+      "match": "#1203",
+      "confidence": 0.95,
+      "strength": "strong",
+      "reason": "'Laxmi aunty order' names Lakshmi Iyer, which matches #1203 by name variant. The payer is a different person (Ananya Patel), which is normal for gifts. #1196 is Venkatesh Murthy."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_ExHoxrL9nWxt4A",
+      "match": "#1196",
+      "confidence": 0.95,
+      "strength": "strong",
+      "reason": "'on behalf of Venky sir' names Venkatesh, which matches #1196 Venkatesh Murthy. #1203 is Lakshmi Iyer."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_Ct4umF6hEhC2hn",
+      "match": "#1231",
+      "confidence": 0.95,
+      "strength": "strong",
+      "reason": "'order no one two three one' decodes to order 1231, which matches #1231 (Manoj Chatterjee). #1226 is the other candidate."
+    },
+    {
+      "kind": "payment",
+      "id": "pay_rb5ZYzkTNUfGQk",
+      "match": "#1226",
+      "confidence": 0.95,
+      "strength": "strong",
+      "reason": "'pymt agnst ord l226' decodes to 1226 (the l is read as 1), which matches #1226 Harish Hegde. The order number is a typo, but it points specifically to #1226."
+    }
+  ],
+  "usage": {
+    "inputTokens": 6966,
+    "outputTokens": 1290,
+    "costUsd": 0.0013415999999999999,
+    "latencyMs": 6334,
+    "model": "claude-haiku-5-5"
+  },
+  "createdAt": "2026-10-23T18:18:07.684Z"
+}
