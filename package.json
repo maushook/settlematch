@@ -9,6 +9,7 @@
     "generate": "tsx scripts/generate.ts",
     "eval": "tsx scripts/eval.ts",
     "precompute": "tsx scripts/precompute.ts",
+    "robustness": "tsx scripts/robustness.ts",
     "deploy": "npm run build && wrangler deploy"
   },
   "license": "ISC",

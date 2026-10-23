@@ -211,3 +211,5 @@ td small { max-width: 34ch; }
   .ex-head .ex-amt { grid-column: 1 / -1; grid-row: 2; text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.mode-run { font-family: var(--display); font-weight: 700; font-size: 1.15rem; color: var(--blue); margin-bottom: 6px; }
+.mode.run { cursor: pointer; }

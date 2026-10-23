@@ -27,6 +27,26 @@ What the numbers say:
 - **AI only sees those 10 leftovers**, each with at most 5 candidates. Notes like "mor wala print" (Hindi for peacock), "paying for Laxmi aunty order" or "pymt agnst ord l226" need language and world knowledge, which is exactly where a model earns its cost. One call, a few thousand tokens, a fraction of a rupee.
 - **The one miss is an abstention, not a wrong match.** For "gol design wali badi painting" three Mandala orders fit, so the model abstained and the payment went to human review instead of a guess. That single unplaced payment is both remaining false alarms.
 
+## Robustness across random months
+
+The same author wrote the sample generator and the engine, so a fair question is whether the 99.7% is tuned to one month. To check, `generateMonth(seed)` in `src/engine/generate.ts` builds a new month for any seed: 250 to 400 orders, different customers and product mix, between zero and a few of each planted problem, and hard payment notes drawn from pools. The pools hold several informal descriptions per product (Hindi, Hinglish, English, a landmark or what the artwork shows), 16 nickname and spelling-variant pairs, and order numbers written with letters for digits, spelled out in English or Hindi, spaced out, or given only as the last two digits. Heuristic thresholds and the AI prompt were not changed for any seed.
+
+| Stage | Months | Link accuracy, mean (min to max) | Wrong matches | Exception precision | Exception recall | Hard cases solved | Sent to AI |
+|---|---|---|---|---|---|---|---|
+| Exact rules | 50 | 95.6% (91.1 to 100.0) | 0 | 40.1% | 100% | 0 of 682 | none |
+| + Heuristics | 50 | 97.2% (94.3 to 100.0) | 0 | 50.6% | 100% | 235 of 682 | none |
+| + AI | 10 | 99.2% (98.3 to 100.0) | 0 | 79.8% | 100% | 110 of 136 | 84 records, $0.0118 |
+
+Seeds 1 to 50, with 257 to 398 orders and 7 to 26 planted problems per month (914 in total). The AI row covers seeds 1 to 10 with claude-haiku-5-5; heuristics alone average 97.4% on those same 10 months.
+
+What the numbers say:
+- **No stage made a wrong match in any month, and no planted problem was missed.** The zero on the sample is not a one-off.
+- **The AI left 26 of 84 records for human review.** 12 had notes with no identifying detail ("payment link", "gift for didi"). In 4 the clue fit more than one candidate, for example "hare chehre wala dancer print" with three Kathakali Face Print orders of the same amount. In the other 10 the clue pointed to one candidate and the model still abstained, for example "for Subbu ji" and "blue bird with big feathers wala print". Those are lost matches, not wrong ones: each goes to review.
+- **Exception precision is lower than on the sample** because each payment left for review shows up as two false alarms, an unpaid order and an orphan payment.
+- **Limits.** Every month is still September 2026 with the same bank noise lines, and the random layout was written by the same author, so it tests variation, not independent data. Real exports remain the real test.
+
+Reproduce with `npm run robustness` (rules and heuristics, 50 seeds) or `ANTHROPIC_API_KEY=... npm run robustness` (adds the AI stage on 10 seeds; model output can vary slightly between runs). In the app, "Generate a new month" builds a month in the browser and puts its seed in the URL, so `/?seed=123` shares it.
+
 ## How it works
 
 ```
@@ -81,8 +101,9 @@ Bank CSV ────┘                                                        
 npm install
 npm run dev          # local app at http://localhost:5173
 npm test             # engine tests
-npm run generate     # regenerate the synthetic sample + answer key
+npm run generate     # regenerate the synthetic sample + answer key (seed 20260930)
 npm run eval         # print the ablation table
+npm run robustness   # score 50 random months (add ANTHROPIC_API_KEY for the AI stage)
 ```
 
 ### Precompute the sample's AI stage
@@ -109,13 +130,16 @@ src/engine/normalize.ts   CSV parsing, column aliases, dates, money
 src/engine/reconcile.ts   the 7-stage pipeline, scoring, exceptions, money summary
 src/engine/ai.ts          prompt, tool schema, response validation, cost
 src/engine/evaluate.ts    scoring against the answer key
+src/engine/generate.ts    synthetic months with planted problems, seeded, runs in the browser
 src/App.tsx               UI
 why.html, src/why.css     static explainer page at /why (numbers checked by tests/why.test.ts)
 worker/index.ts           Cloudflare Worker: static assets + /api/resolve
-scripts/generate.ts       synthetic data with planted problems
+scripts/generate.ts       writes the sample month to disk
+scripts/robustness.ts     scores many random months
 scripts/precompute.ts     one-off AI run for the sample
 tests/engine.test.ts      pipeline guarantees (zero wrong matches, 100% recall, validation)
 tests/why.test.ts         every number on /why matches the engine
+tests/generate.test.ts    byte-identical sample, months vary by seed, zero wrong matches on random months
 ```
 
 ## Assumptions

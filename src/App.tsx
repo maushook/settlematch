@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { parseDataset, type ParseIssue } from './engine/normalize';
 import { DEFAULT_CONTRACT, reconcile } from './engine/reconcile';
 import { evaluate, type EvalResult } from './engine/evaluate';
+import { generateMonth } from './engine/generate';
 import type {
   AiRun, AnswerKey, Dataset, FeeContract, Mode, ReconResult, RecException, Severity,
 } from './engine/types';
@@ -22,7 +23,19 @@ const METHOD_LABEL: Record<string, string> = {
   heuristic: 'Heuristic', ai: 'AI',
 };
 
-type Source = { kind: 'sample' | 'upload'; name: string; data: Dataset };
+// key: the answer key, known for the sample and for generated months, so they can be scored.
+type Source = { kind: 'sample' | 'generated' | 'upload'; name: string; data: Dataset; key?: AnswerKey; seed?: number };
+
+const seedFromUrl = () => {
+  const v = new URLSearchParams(window.location.search).get('seed');
+  return v && /^\d{1,9}$/.test(v) ? Number(v) : null;
+};
+const setSeedInUrl = (seed: number | null) => {
+  const url = new URL(window.location.href);
+  if (seed === null) url.searchParams.delete('seed'); else url.searchParams.set('seed', String(seed));
+  window.history.replaceState(null, '', url);
+};
+const scrollToResults = () => requestAnimationFrame(() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth' }));
 
 export default function App() {
   const [source, setSource] = useState<Source | null>(null);
@@ -39,12 +52,30 @@ export default function App() {
     const [orders, gateway, bank] = await Promise.all([get('shopify_orders.csv'), get('razorpay_settlement_report.csv'), get('bank_statement.csv')]);
     const { data, issues } = parseDataset({ orders, gateway, bank });
     setIssues(issues);
-    setSource({ kind: 'sample', name: 'Kalakriti Home, September 2026 (synthetic)', data });
+    setSource({ kind: 'sample', name: 'Kalakriti Home, September 2026 (synthetic)', data, key: SAMPLE_KEY });
     setAiRun(SAMPLE_AI);
     setMode(SAMPLE_AI ? 'ai' : 'heuristic');
     setLoading(false);
-    requestAnimationFrame(() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth' }));
+    setSeedInUrl(null);
+    scrollToResults();
   }
+
+  // A fresh synthetic month, built in the browser. The seed goes in the URL so the month can be shared.
+  function runGenerated(seed: number, scroll = true) {
+    const month = generateMonth(seed, { layout: 'random' });
+    const { data, issues } = parseDataset(month.files);
+    setIssues(issues);
+    setSource({ kind: 'generated', name: `Generated month, seed ${seed} (synthetic)`, data, key: month.key, seed });
+    setAiRun(null);
+    setMode('heuristic');
+    setSeedInUrl(seed);
+    if (scroll) scrollToResults();
+  }
+
+  useEffect(() => {
+    const seed = seedFromUrl();
+    if (seed !== null) runGenerated(seed, false);
+  }, []);
 
   function runUpload(files: { orders: string; gateway: string; bank: string }) {
     const { data, issues } = parseDataset(files);
@@ -53,7 +84,8 @@ export default function App() {
     setSource({ kind: 'upload', name: 'Your files', data });
     setAiRun(null);
     setMode('heuristic');
-    requestAnimationFrame(() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth' }));
+    setSeedInUrl(null);
+    scrollToResults();
   }
 
   return (
@@ -76,9 +108,13 @@ export default function App() {
           <button className="btn primary" onClick={runSample} disabled={loading}>
             {loading ? 'Reconciling…' : 'Run on sample data'}
           </button>
+          <button className="btn" onClick={() => runGenerated(Math.floor(Math.random() * 1e6) + 1)}>Generate a new month</button>
           <button className="btn ghost" onClick={() => setShowUpload((v) => !v)}>Upload your CSVs</button>
         </div>
-        <p className="hint">Sample: 300 orders, 289 gateway rows and 36 bank lines for a fictional wall-art brand, with 25 problems planted on purpose.</p>
+        <p className="hint">
+          Sample: 300 orders, 289 gateway rows and 36 bank lines for a fictional wall-art brand, with 25 problems planted on purpose.
+          A new month changes the customers, products, order count, payment notes and how many of each problem are planted.
+        </p>
         {showUpload && <UploadPanel onRun={runUpload} />}
         {issues.length > 0 && (
           <div className="issues" role="alert">
@@ -90,6 +126,7 @@ export default function App() {
 
       {source && !issues.length && (
         <Results
+          key={`${source.kind}:${source.seed ?? ''}`}
           source={source} contract={contract} setContract={setContract}
           aiRun={aiRun} setAiRun={setAiRun} mode={mode} setMode={setMode}
         />
@@ -136,7 +173,6 @@ interface ResultsProps {
 
 function Results({ source, contract, setContract, aiRun, setAiRun, mode, setMode }: ResultsProps) {
   const { data } = source;
-  const isSample = source.kind === 'sample';
   const runs = useMemo(() => {
     const out: Partial<Record<Mode, ReconResult>> = {
       rules: reconcile(data, { mode: 'rules', contract }),
@@ -146,11 +182,11 @@ function Results({ source, contract, setContract, aiRun, setAiRun, mode, setMode
     return out;
   }, [data, contract, aiRun]);
   const evals = useMemo(() => {
-    if (!isSample) return null;
+    if (!source.key) return null;
     const e: Partial<Record<Mode, EvalResult>> = {};
-    for (const m of Object.keys(runs) as Mode[]) e[m] = evaluate(runs[m]!, SAMPLE_KEY);
+    for (const m of Object.keys(runs) as Mode[]) e[m] = evaluate(runs[m]!, source.key);
     return e;
-  }, [runs, isSample]);
+  }, [runs, source.key]);
 
   const active = runs[mode] ?? runs.heuristic!;
   const pending = runs.heuristic!.pendingPackets;
@@ -179,6 +215,9 @@ function Results({ source, contract, setContract, aiRun, setAiRun, mode, setMode
             {active.counts.orders} orders, {active.counts.payments} gateway payments, {active.counts.settlements} settlements,
             {' '}{active.counts.bankCredits} gateway credits in the bank. Reconciled in {active.runtimeMs} ms in your browser.
           </p>
+          {source.seed !== undefined && (
+            <p className="meta">Seed {source.seed}. <a href={`/?seed=${source.seed}`}>Link to this month</a></p>
+          )}
         </div>
       </div>
 
@@ -207,15 +246,18 @@ function ModeSwitch({ runs, evals, mode, setMode, aiRun, pendingCount, onRunAi, 
       <p className="sub">
         {evals
           ? 'Every planted problem has a known answer, so each stage is scored. Pick a column to see its results below.'
-          : 'Pick a column to see its results below. Accuracy is shown only for the sample, where the right answers are known.'}
+          : 'Pick a column to see its results below. Accuracy is shown only for the sample and generated months, where the right answers are known.'}
       </p>
       <div className="modes" role="tablist">
         {modes.map((m) => {
           const r = runs[m]; const e = evals?.[m];
           const available = !!r;
+          // With no AI results yet, the AI column itself runs the live AI stage.
+          const canRunAi = m === 'ai' && !available && pendingCount > 0 && !aiState.busy;
           return (
-            <button key={m} role="tab" aria-selected={mode === m} disabled={!available}
-              className={`mode ${mode === m ? 'on' : ''}`} onClick={() => available && setMode(m)}>
+            <button key={m} role="tab" aria-selected={mode === m} disabled={!available && !canRunAi}
+              className={`mode ${mode === m ? 'on' : ''} ${canRunAi ? 'run' : ''}`}
+              onClick={() => (available ? setMode(m) : canRunAi && onRunAi())}>
               <span className="mode-name">{MODE_LABEL[m]}</span>
               {r ? (
                 <dl>
@@ -229,7 +271,14 @@ function ModeSwitch({ runs, evals, mode, setMode, aiRun, pendingCount, onRunAi, 
                   {m === 'ai' && aiRun && <><dt>AI cost</dt><dd>${aiRun.usage.costUsd.toFixed(4)} (about {inr(aiRun.usage.costUsd * USD_INR, 2)})</dd></>}
                 </dl>
               ) : (
-                <p className="mode-empty">{pendingCount} ambiguous records are waiting for the AI stage.</p>
+                <>
+                  <span className="mode-run">{aiState.busy ? 'Asking Claude…' : pendingCount ? 'Run the AI stage live' : 'Nothing for the AI to decide'}</span>
+                  <p className="mode-empty">
+                    {pendingCount
+                      ? `Sends the ${pendingCount} records heuristics refused to decide. Precomputed AI results exist only for the sample.`
+                      : 'Rules and heuristics placed every record in this month.'}
+                  </p>
+                </>
               )}
             </button>
           );
