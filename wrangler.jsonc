@@ -3,6 +3,7 @@
   "name": "settlematch",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
+  "placement": { "region": "aws:us-east-1" },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
