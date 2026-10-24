@@ -137,6 +137,8 @@ npm run deploy
 
 The app is served at `https://maushook.com/settlematch/`. `wrangler.jsonc` routes only `maushook.com/settlematch` and `maushook.com/settlematch/*` to the Worker, so the rest of the zone keeps serving its own site. The Worker redirects `/settlematch` to `/settlematch/`, strips the prefix before serving assets or `/api/*`, and returns 404 for anything else. Vite builds with `base: '/settlematch/'`, and app code builds every URL from `import.meta.env.BASE_URL`. The workers.dev address stays on and also accepts paths without the prefix.
 
+Every push to `main` also deploys automatically: `.github/workflows/deploy.yml` runs `npm ci`, `npm test` and `npm run deploy`, using the repo secret `CLOUDFLARE_API_TOKEN` and the repo variable `CLOUDFLARE_ACCOUNT_ID`. The `ANTHROPIC_API_KEY` Worker secret is set once with `wrangler secret put` and survives deploys.
+
 ## Repo map
 
 ```

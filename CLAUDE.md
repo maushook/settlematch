@@ -9,7 +9,7 @@ Submission for the Razorpay AI Builders hiring challenge. Reconciles Shopify ord
 - `npm run precompute -- drafts` polishes only the sample's drafts, writes `src/sample/ai-drafts.json`
 - `npm run generate` regenerates synthetic sample data + answer key (seeded, deterministic)
 - `npm run dev` local app, `npm run build` type-check + build
-- Deploy: Cloudflare Workers via `npm run deploy` (wrangler). Live at https://maushook.com/settlematch/
+- Deploy: Cloudflare Workers via `npm run deploy` (wrangler). Live at https://maushook.com/settlematch/. Pushes to `main` deploy automatically via `.github/workflows/deploy.yml`.
 
 ## Architecture
 - `src/engine/` pure TypeScript, runs in the browser. Pipeline in `reconcile.ts`: normalize, rules (order to payment), fee check, rules (settlement to bank by UTR), heuristics, AI, exceptions.
