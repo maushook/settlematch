@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { bindThemeToggle } from './theme';
 import { parseDataset, type ParseIssue } from './engine/normalize';
 import { DEFAULT_CONTRACT, reconcile } from './engine/reconcile';
 import { evaluate, type EvalResult } from './engine/evaluate';
@@ -99,10 +100,16 @@ export default function App() {
   return (
     <div className="page">
       <header className="top">
-        <a className="brand" href={at()}><span className="brand-mark">₹</span> SettleMatch</a>
-        <nav className="top-nav" aria-label="Main">
-          <a className="top-link" href={at('why')}>Why it matters</a>
-        </nav>
+        <div className="site-controls">
+          <a className="back-link" href="https://maushook.com/">← maushook.com</a>
+          <ThemeToggle />
+        </div>
+        <div className="top-main">
+          <a className="brand" href={at()}><span className="brand-mark">₹</span> SettleMatch</a>
+          <nav className="top-nav" aria-label="Main">
+            <a className="top-link" href={at('why')}>Why it matters</a>
+          </nav>
+        </div>
       </header>
 
       <section className="hero">
@@ -145,6 +152,12 @@ export default function App() {
       </footer>
     </div>
   );
+}
+
+function ThemeToggle() {
+  const ref = useRef<HTMLButtonElement>(null);
+  useEffect(() => bindThemeToggle(ref.current!), []);
+  return <button ref={ref} className="theme-toggle" type="button" />;
 }
 
 // ---------------- upload ----------------
@@ -276,7 +289,7 @@ function ModeSwitch({ runs, evals, mode, setMode, aiRun, pendingCount, onRunAi, 
                   {!e && <><dt>Exceptions raised</dt><dd className="big">{r.exceptions.length}</dd></>}
                   <dt>Sent to AI</dt>
                   <dd>{m === 'ai' ? `${pendingCount} records` : 'none'}</dd>
-                  {m === 'ai' && aiRun && <><dt>AI cost</dt><dd>${aiRun.usage.costUsd.toFixed(4)} (about {inr(aiRun.usage.costUsd * USD_INR, 2)})</dd></>}
+                  {m === 'ai' && aiRun && <><dt>AI cost</dt><dd>${aiRun.usage.costUsd.toFixed(4)}<small>about {inr(aiRun.usage.costUsd * USD_INR, 2)}</small></dd></>}
                 </dl>
               ) : (
                 <>
